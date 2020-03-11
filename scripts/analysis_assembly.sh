@@ -13,6 +13,7 @@
 
 if [ "$#" -ne 2 ]; then
     echo "Illegal number of parameters, see usage in script"
+    exit 1
 fi
 
 ASSEMBLED_FILE=$1
