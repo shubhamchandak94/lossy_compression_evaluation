@@ -13,6 +13,7 @@ import numpy as np
 
 PATH_LFZIP = "/raid/shubham/nanopore_lossy_compression/LFZip/src/nlms_compress.py"
 PATH_SZ = "/raid/shubham/nanopore_lossy_compression/SZ/bin/bin/sz"
+randsuf = None #  random so parallel runs don't collide in temporary files
 
 def get_read_number_from_fast5_filename(fast5_filename):
     '''
@@ -59,7 +60,7 @@ def LFZip_compression(in_array, maxerror: int):
     '''
     assert in_array.dtype == np.int16
     # write to file
-    tmp_prefix = 'tmp.'+str(random.randrange(1000000)) # random so parallel runs don't collide
+    tmp_prefix = 'tmp.'+str(randsuf) # random so parallel runs don't collide
     np.save(tmp_prefix+'.npy',np.float32(in_array))
     maxerror_float = maxerror + 0.49 # since we can round later to achieve maxerror
     # run LFZip compression (NOTE: should already be in virtualenv)
@@ -86,7 +87,7 @@ def SZ_compression(in_array, maxerror: int):
     '''
     assert in_array.dtype == np.int16
     # write to file
-    tmp_prefix = 'tmp.'+str(random.randrange(1000000)) # random so parallel runs don't collide
+    tmp_prefix = 'tmp.'+str(randsuf) # random so parallel runs don't collide
     with open(tmp_prefix+'.dat','wb') as f:
         np.float32(in_array).tofile(f)
     maxerror_float = maxerror + 0.49 # since we can round later to achieve maxerror
@@ -147,6 +148,7 @@ if __name__ == '__main__':
     if lossy_flag:
         # create args.outDir directory if doesn't already exist
         os.makedirs(args.outDir, exist_ok = True)
+    randsuf = random.randrange(10000000)
 
     # go through all fast5 files in inDir and perform relevant operation
     # open summaryFile
