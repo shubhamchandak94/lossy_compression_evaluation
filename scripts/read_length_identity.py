@@ -67,7 +67,7 @@ def main():
         if whole_read_identity > 0.0:
             relative_length = '%.5f' % (100.0 * total_read_length / total_ref_length)
         else:
-            relative_length = ''
+            relative_length = 'nan'
 
         print('{}\t{}\t{:.5f}\t{}'.format(read_name, read_length, whole_read_identity, relative_length))
         print_progress(read_num, len(read_names))

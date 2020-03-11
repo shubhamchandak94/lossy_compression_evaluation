@@ -9,9 +9,17 @@
 # have received a copy of the GNU General Public License along with this program. If not, see
 # <http://www.gnu.org/licenses/>.
 
-python3 scripts/chop_up_assembly.py $1 100000 > pieces.fasta
-minimap2 -x asm5 -t 8 -c hybrid_reference.fasta pieces.fasta > pieces.paf
-python3 scripts/read_length_identity.py pieces.fasta pieces.paf > pieces.data
-printf $1"\t"
-python3 scripts/medians.py pieces.data
-rm pieces.*
+# USAGE: ./analysis_basecall_accuracy.sh FASTQ_FILE REFERENCE_FILE
+
+if [ "$#" -ne 2 ]; then
+    echo "Illegal number of parameters, see usage in script"
+fi
+
+FASTQ_FILE=$1
+REFERENCE_FILE=$2
+SCRIPT_PATH="/raid/shubham/nanopore_lossy_compression/lossy_compression_evaluation/scripts"
+MINIMAP2="/raid/shubham/nanopore_lossy_compression/minimap2-2.17/minimap2"
+
+$MINIMAP2 -x map-ont -t 8 -c $REFERENCE_FILE $FASTQ_FILE > $FASTQ_FILE.analysis.paf
+python3 $SCRIPT_PATH/read_length_identity.py $FASTQ_FILE $FASTQ_FILE.analysis.paf > $FASTQ_FILE.basecall_analysis.tsv
+rm $FASTQ_FILE.analysis.paf
