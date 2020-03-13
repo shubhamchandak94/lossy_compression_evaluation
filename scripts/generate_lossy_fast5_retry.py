@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+
+# if previous run failed, use this code which doesn't rerun the whole thing
+
 import re
 import h5py
 import shutil
@@ -156,11 +159,16 @@ if __name__ == '__main__':
     randsuf = random.randrange(10000000)
 
     # go through all fast5 files in inDir and perform relevant operation
-    # open summaryFile
-    f_summary = open(args.summaryFile,'w')
-    f_summary.write('File\tSignal length\tCompressed Size\n')
+    # open summaryFile 
+    with open(args.summaryFile,'r') as f_summary:
+        already_done = set([l.rstrip('\n').split('\t')[0] for l in f_summary.readlines()])
+
+    f_summary = open(args.summaryFile,'a')
+#    f_summary.write('File\tSignal length\tCompressed Size\n')
     for filename in os.listdir(args.inDir):
         if filename.endswith('.fast5'):
+            if filename in already_done:
+                continue
             filepath = os.path.join(args.inDir,filename)
             raw_array = get_raw_signal_array_from_fast5(filepath)
             raw_array_len = raw_array.size
