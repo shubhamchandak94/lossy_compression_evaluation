@@ -24,28 +24,22 @@ REBALER="/raid/shubham/nanopore_lossy_compression/Rebaler/rebaler-runner.py"
 RACON_PATH="/raid/shubham/nanopore_lossy_compression/racon/build/bin/"
 MINIMAP2_PATH="/raid/shubham/nanopore_lossy_compression/minimap2-2.17/"
 MEDAKA_VENV_PATH="/raid/shubham/nanopore_lossy_compression/medaka/venv/bin/activate"
-MEDAKA_BONITO="/raid/shubham/nanopore_lossy_compression/bonito/oukeesfjc6406t5po0x2hlw97lnelkyl.hdf5"
 
 # create DIRNAME if doesn't already exist
 mkdir -p $DIRNAME
 
-# fix empty lines which cause error by replacing them with single N
-sed 's/^$/N/' $FASTQNAME > $FASTQNAME.tmp.fastq
-
 # 1. assembly with flye
 mkdir $DIRNAME/flye/
-$FLYE --nano-raw $FASTQNAME.tmp.fastq --genome-size $GENOME_SIZE --out-dir $DIRNAME/flye/ --threads 12
+$FLYE --nano-raw $FASTQNAME --genome-size $GENOME_SIZE --out-dir $DIRNAME/flye/ --threads 12
 
 # 2. polishing with rebaler
 # add racon and minimap2 to PATH
 PATH=$PATH:$RACON_PATH
 PATH=$PATH:$MINIMAP2_PATH
-$REBALER --threads 8 $DIRNAME/flye/assembly.fasta $FASTQNAME.tmp.fastq > $DIRNAME/rebaler.fasta
+$REBALER --threads 8 $DIRNAME/flye/assembly.fasta $FASTQNAME > $DIRNAME/rebaler.fasta
 
 # 3. medaka consensus
 # first go into virtual environment
 source $MEDAKA_VENV_PATH
-medaka_consensus -i $FASTQNAME.tmp.fastq -d $DIRNAME/rebaler.fasta -o $DIRNAME/medaka -t 12 -m $MEDAKA_BONITO
+medaka_consensus -i $FASTQNAME -d $DIRNAME/rebaler.fasta -o $DIRNAME/medaka -t 12 -m r941_min_fast_g303
 deactivate
-
-rm $FASTQNAME.tmp.fastq

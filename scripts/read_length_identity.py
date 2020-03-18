@@ -45,30 +45,33 @@ def main():
     print('\t'.join(['Name', 'Length', 'Identity', 'Relative length']))
     for read_num, read_name in enumerate(read_names):
         read_length = read_lengths[read_name]
-        alignments = read_alignments[read_name]
-        identity_by_base = [0.0] * read_length
-        total_read_length, total_ref_length = 0, 0
-
-        for read_start, read_end, ref_start, ref_end, identity in alignments:
-            for i in range(read_start, read_end):
-                if identity > identity_by_base[i]:
-                    identity_by_base[i] = identity
-            total_read_length += read_end - read_start
-            total_ref_length += ref_end - ref_start
-
-        # If less than half the read aligned, then we call it an unaligned read.
-        if identity_by_base.count(0.0) > read_length / 2.0:
+        if read_length == 0:
             whole_read_identity = 0.0
-
-        # Otherwise, the read's identity is the average of the aligned parts.
-        else:
-            whole_read_identity = statistics.mean([x for x in identity_by_base if x > 0.0])
-
-        if whole_read_identity > 0.0:
-            relative_length = '%.5f' % (100.0 * total_read_length / total_ref_length)
-        else:
             relative_length = 'nan'
+        else:
+            alignments = read_alignments[read_name]
+            identity_by_base = [0.0] * read_length
+            total_read_length, total_ref_length = 0, 0
 
+            for read_start, read_end, ref_start, ref_end, identity in alignments:
+                for i in range(read_start, read_end):
+                    if identity > identity_by_base[i]:
+                        identity_by_base[i] = identity
+                total_read_length += read_end - read_start
+                total_ref_length += ref_end - ref_start
+
+            # If less than half the read aligned, then we call it an unaligned read.
+            if identity_by_base.count(0.0) > read_length / 2.0:
+                whole_read_identity = 0.0
+
+            # Otherwise, the read's identity is the average of the aligned parts.
+            else:
+                whole_read_identity = statistics.mean([x for x in identity_by_base if x > 0.0])
+
+            if whole_read_identity > 0.0:
+                relative_length = '%.5f' % (100.0 * total_read_length / total_ref_length)
+            else:
+                relative_length = 'nan'
         print('{}\t{}\t{:.5f}\t{}'.format(read_name, read_length, whole_read_identity, relative_length))
         print_progress(read_num, len(read_names))
     print('\n', file=sys.stderr)

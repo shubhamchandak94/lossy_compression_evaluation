@@ -16,6 +16,7 @@ DIRNAME=$1
 FASTQNAME=$2
 BONITO_PATH="/raid/shubham/nanopore_lossy_compression/bonito/"
 SEQTK="/raid/shubham/nanopore_lossy_compression/seqtk/seqtk"
+SCRIPT_PATH="/raid/shubham/nanopore_lossy_compression/lossy_compression_evaluation/scripts"
 
 # basecall with bonito
 source $BONITO_PATH/env/bin/activate
@@ -25,3 +26,8 @@ deactivate
 # convert fasta to fastq by filling in fake quality values
 $SEQTK seq  -F '#' $FASTQNAME.tmp.fasta > $FASTQNAME
 rm $FASTQNAME.tmp.fasta
+
+# fix fastq file issue (seqtk leaves empty fasta lines as it is which causes errors later)
+cp $FASTQNAME $FASTQNAME.tmp
+$SCRIPT_PATH/fix_fastq_bonito.py $FASTQNAME.tmp $FASTQNAME
+rm $FASTQNAME.tmp
