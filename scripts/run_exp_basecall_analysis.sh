@@ -8,7 +8,7 @@ EXPDIR=$ROOTDIR/experiments
 
 for i in {1..10}; do
     ./basecall.sh $EXPDIR/new_fast5/LFZip_maxerror_$i  $EXPDIR/basecalled_fastq/LFZip_maxerror_$i.fastq
-    ./basecall.sh $EXPDIR/new_fast5/SZ_maxerror_$i  $EXPDIR/basecalled_fastq/SZ_$i.fastq
+    ./basecall.sh $EXPDIR/new_fast5/SZ_maxerror_$i  $EXPDIR/basecalled_fastq/SZ_maxerror_$i.fastq
 done
 
 # basecalling analysis
