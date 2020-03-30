@@ -20,13 +20,13 @@ randsuf = None #  random so parallel runs don't collide in temporary files
 
 def get_read_number_from_fast5_filename(fast5_filename):
     '''
-    from fast5 filename of the form *read9326*.fast5 extract
+    from fast5 filename of the form *read_9326*.fast5 or *read9326*.fast5 extract
     and return '9326'.
     This is needed because the fast5 uses the read number as a key.
     Use regex to achieve this.
     Can handle cases when fast5_filename includes the full path
     '''
-    match = re.match('^.*read([0-9]*).*\.fast5$',os.path.basename(filename))
+    match = re.match('^.*read_*([0-9]*).*\.fast5$',os.path.basename(filename))
     if not match:
         raise RuntimeError("unexpected fast5 filename")
     return match.group(1)
