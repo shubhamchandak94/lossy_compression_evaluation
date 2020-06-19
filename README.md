@@ -100,7 +100,7 @@ cd ../
 rm v2.17.tar.gz
 ```
 
-#### Medaka
+#### Medaka (TO FIX)
 ```
 git clone https://github.com/nanoporetech/medaka.git
 cd medaka/
