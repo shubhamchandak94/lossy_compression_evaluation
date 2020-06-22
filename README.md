@@ -32,7 +32,7 @@ source lossy_comp_env/bin/activate
 pip install -q --upgrade pip
 ```
 
-#### Install ont_fast5_api
+#### ont_fast5_api
 Utility functions for conversion from multi to single read fast5
 ```
 pip3 install ont_fast5_api
@@ -50,7 +50,7 @@ rm ont-guppy_4.0.11_linux64.tar.gz
 pip install megalodon==2.1.0
 ```
 
-#### Bonito
+#### Bonito basecaller 
 ```
 pip install bonito==0.2.0
 ```
@@ -100,17 +100,66 @@ cd ../
 rm v2.17.tar.gz
 ```
 
-#### Medaka (TO FIX)
+#### Medaka
 ```
 git clone https://github.com/nanoporetech/medaka.git
 cd medaka/
-git checkout -n v1.0.3
+git checkout v1.0.3
+conda create -n python3_6_env python=3.6
+conda activate python3_6_env
 sed -i 's/tensorflow/tensorflow-gpu/' requirements.txt # to use GPUs
 make install
 cd ../
+conda deactivate
 ```
 
+#### Racon
+```
+wget https://github.com/lbcb-sci/racon/releases/download/1.4.13/racon-v1.4.13.tar.gz
+tar -xzvf racon-v1.4.13.tar.gz
+cd racon-v1.4.13/
+mkdir build/
+cd build/
+cmake -DCMAKE_BUILD_TYPE=Release ..
+make
+cd ../../
+rm racon-v1.4.13.tar.gz
+```
 
+#### Rebaler
+```
+wget https://github.com/rrwick/Rebaler/archive/v0.2.0.tar.gz
+tar -xzvf v0.2.0.tar.gz
+rm v0.2.0.tar.gz
+```
+
+#### Flye
+```
+wget https://github.com/fenderglass/Flye/archive/2.7.1.tar.gz
+tar -xzvf 2.7.1.tar.gz
+cd Flye-2.7.1/
+make
+cd ../
+rm 2.7.1.tar.gz
+```
+
+#### VBZ python plugin
+```
+conda activate python3_6_env # created above for Medaka
+wget https://github.com/nanoporetech/vbz_compression/releases/download/v1.0.1/pyvbz-1.0.1-cp36-cp36m-linux_x86_64.whl
+pip install pyvbz-1.0.1-cp36-cp36m-linux_x86_64.whl
+conda deactivate
+```
+
+#### fastmer
+```
+pip install pyvcf
+pip install pysam
+git clone https://github.com/jts/assembly_accuracy
+cd assembly_accuracy/
+git checkout ff822506aa12958a203c093257cdbfcf7abd6308
+cd ../
+```
 
 ### Download data
 ```
@@ -120,8 +169,10 @@ cd data/
 ```
 
 #### E. coli
+Source: http://albertsenlab.org/we-ar10-3-pretty-close-now/
 ```
 mkdir ecolik12mg1655_R10.3/
+cd ecolik12mg1655_R10.3/
 wget ftp://ftp.sra.ebi.ac.uk/vol1/run/ERR389/ERR3890216/ecolik12mg1655_fast5_R10.3.tar.gz
 wget ftp://ftp.ensemblgenomes.org/pub/bacteria/release-47/fasta/bacteria_0_collection/escherichia_coli_str_k_12_substr_mg1655/dna/Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.toplevel.fa.gz
 gunzip Escherichia_coli_str_k_12_substr_mg1655.ASM584v2.dna.toplevel.fa.gz
@@ -135,6 +186,54 @@ Flatten directory structure (https://unix.stackexchange.com/a/52816)
 ```
 find fast5 -mindepth 2 -type f -exec mv -t fast5 -i '{}' +
 ```
+Remove temporary files
+```
+rm -r ecolik12mg1655_fast5_R10.3.tar.gz srv multi_to_single_fast5.py
+mkdir experiments/
+cd ../
+```
+
+
+#### K. pneumoniae
+Source: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1727-y
+```
+mkdir Klebsiella_pneumoniae_INF032/
+cd Klebsiella_pneumoniae_INF032/
+mkdir fast5/ && cd fast5/
+wget -O Klebsiella_pneumoniae_INF032_fast5s.tar.gz https://bridges.monash.edu/ndownloader/files/15188573
+tar -xzvf Klebsiella_pneumoniae_INF032_fast5s.tar.gz
+cd ../
+wget -O Klebsiella_pneumoniae_INF032_reference.fasta.gz https://bridges.monash.edu/ndownloader/files/14260223
+gunzip Klebsiella_pneumoniae_INF032_reference.fasta.gz
+```
+
+Clean up:
+```
+rm fast5/Klebsiella_pneumoniae_INF032_fast5s.tar.gz
+mkdir experiments/
+cd ../
+```
+
+#### S. aureus
+Source: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1727-y
+```
+mkdir Staphylococcus_aureus_CAS38_02/
+cd Staphylococcus_aureus_CAS38_02/
+mkdir fast5/ && cd fast5/
+wget -O Staphylococcus_aureus_CAS38_02_fast5s.tar.gz https://bridges.monash.edu/ndownloader/files/14260568
+tar -xzvf Staphylococcus_aureus_CAS38_02_fast5s.tar.gz
+cd ../
+wget -O Staphylococcus_aureus_CAS38_02_reference.fasta.gz https://bridges.monash.edu/ndownloader/files/14260241
+gunzip Staphylococcus_aureus_CAS38_02_reference.fasta.gz
+```
+
+Cleanup:
+```
+rm fast5/Staphylococcus_aureus_CAS38_02_fast5s.tar.gz
+mkdir experiments/
+cd ../
+```
+
 ## License
 
 [GNU General Public License, version 3](https://www.gnu.org/licenses/gpl-3.0.html)
