@@ -18,8 +18,8 @@ fi
 
 FASTQ_FILE=$1
 REFERENCE_FILE=$2
-SCRIPT_PATH="/raid/shubham/nanopore_lossy_compression/lossy_compression_evaluation/scripts"
-MINIMAP2="/raid/shubham/nanopore_lossy_compression/minimap2-2.17/minimap2"
+SCRIPT_PATH=$WORKINGDIR/lossy_compression_evaluation/scripts
+MINIMAP2=$WORKINGDIR/minimap2-2.17/minimap2
 
 $MINIMAP2 -x map-ont -t 8 -c $REFERENCE_FILE $FASTQ_FILE > $FASTQ_FILE.analysis.paf
 python3 $SCRIPT_PATH/read_length_identity.py $FASTQ_FILE $FASTQ_FILE.analysis.paf > $FASTQ_FILE.basecall_analysis.tsv

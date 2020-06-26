@@ -11,30 +11,18 @@ from _vbz import ffi
 import argparse
 import numpy as np
 
-PATH_LFZIP = "/raid/shubham/nanopore_lossy_compression/LFZip/src/nlms_compress.py"
-PATH_SZ = "/raid/shubham/nanopore_lossy_compression/SZ/bin/bin/sz"
+WORKINGDIR = os.environ['WORKINGDIR']
+PATH_SZ = WORKINGDIR + '/SZ-2.1.8.3/bin/sz'
+PATH_LFZIP = "lfzip-nlms"
 randsuf = None #  random so parallel runs don't collide in temporary files
-
-def get_read_number_from_fast5_filename(fast5_filename):
-    '''
-    from fast5 filename of the form *read_9326*.fast5 or *read9326*.fast5 extract
-    and return '9326'.
-    This is needed because the fast5 uses the read number as a key.
-    Use regex to achieve this.
-    Can handle cases when fast5_filename includes the full path
-    '''
-    match = re.match('^.*read_*([0-9]*).*\.fast5$',os.path.basename(filename))
-    if not match:
-        raise RuntimeError("unexpected fast5 filename")
-    return match.group(1)
 
 def get_raw_signal_array_from_fast5(fast5_filename):
     '''
     return raw signal array from fast5 file as a np array
     '''
-    readnum = get_read_number_from_fast5_filename(fast5_filename)
     f = h5py.File(fast5_filename,'r')
-    return np.array(f['Raw']['Reads']['Read_'+readnum]['Signal'])
+    readnum_key = list(f['Raw']['Reads'].keys())[0]
+    return np.array(f['Raw']['Reads'][readnum_key]['Signal'])
 
 def replace_raw_signal_array_in_fast5(fast5_filename, new_fast5_filename, new_signal):
     '''
@@ -42,17 +30,17 @@ def replace_raw_signal_array_in_fast5(fast5_filename, new_fast5_filename, new_si
     new_signal should be dtype np.int16
     '''
     assert new_signal.dtype == np.int16
-    readnum = get_read_number_from_fast5_filename(fast5_filename)
     # create copy of fast5_filename to new_fast5_filename
     shutil.copy(fast5_filename,new_fast5_filename)
     # now open new_fast5_filename in r+ mode
     f = h5py.File(new_fast5_filename,'r+')
-    data = f['Raw']['Reads']['Read_'+readnum]['Signal']
+    readnum_key = list(f['Raw']['Reads'].keys())[0]
+    data = f['Raw']['Reads'][readnum_key]['Signal']
     data[...] = new_signal
     f.close()
     # verify that the right thing was written!
     f = h5py.File(new_fast5_filename,'r')
-    data_written = np.array(f['Raw']['Reads']['Read_'+readnum]['Signal'])
+    data_written = np.array(f['Raw']['Reads'][readnum_key]['Signal'])
     assert np.array_equal(data_written,new_signal)
     f.close()
 
@@ -69,7 +57,7 @@ def LFZip_compression(in_array, maxerror: int):
     np.save(tmp_prefix+'.npy',np.float32(in_array))
     maxerror_float = maxerror + 0.49 # since we can round later to achieve maxerror
     # run LFZip compression (NOTE: should already be in virtualenv)
-    subprocess.run(['python3',PATH_LFZIP,'-m','c','-i',tmp_prefix+'.npy','-o',tmp_prefix+'.bsc','-a',str(maxerror_float)])
+    subprocess.run([PATH_LFZIP,'-m','c','-i',tmp_prefix+'.npy','-o',tmp_prefix+'.bsc','-a',str(maxerror_float),'-n','0'])
     # get size
     size = os.path.getsize(tmp_prefix+'.bsc')
     # get reconstruction
@@ -134,11 +122,11 @@ def vbz_compressed_size(signal):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Input')
-    parser.add_argument('--inDir', type=str, required=True, help='directory with input fast5 files')
+    parser.add_argument('--inDir', type=str, required=True, help='directory with input fast5 files (must be singleread fast5s)')
     parser.add_argument('--outDir', type=str, help='directory to store output fast5 files when using lossy compression')
     parser.add_argument('--summaryFile', type=str, required=True, help='file to write the summary of files processed along with the signal lengths and compressed sizes')
     parser.add_argument('--compressor', type=str, required=True, help='compressor to use: VBZ (lossless), LFZip (lossy), SZ (lossy)')
-    parser.add_argument('--maxError', type=int, help='maximum tolerable error in signal when using lossy ccompression')
+    parser.add_argument('--maxError', type=int, help='maximum tolerable error in signal when using lossy compression')
     args = parser.parse_args()
     # check that compressor is correct
     if args.compressor not in ['VBZ','LFZip','SZ']:
@@ -157,10 +145,20 @@ if __name__ == '__main__':
 
     # go through all fast5 files in inDir and perform relevant operation
     # open summaryFile
-    f_summary = open(args.summaryFile,'w')
-    f_summary.write('File\tSignal length\tCompressed Size\n')
+    # check if file already exists (if previous run failed, don't rerun the whole thing)
+    if os.path.isfile(args.summaryFile):
+        with open(args.summaryFile,'r') as f_summary:
+            already_done = set([l.rstrip('\n').split('\t')[0] for l in f_summary.readlines()])    
+        f_summary = open(args.summaryFile,'a')
+    else:
+        f_summary = open(args.summaryFile,'w')
+        f_summary.write('File\tSignal length\tCompressed Size\n')
+        already_done = set([]) 
+
     for filename in os.listdir(args.inDir):
         if filename.endswith('.fast5'):
+            if filename in already_done:
+                continue
             filepath = os.path.join(args.inDir,filename)
             raw_array = get_raw_signal_array_from_fast5(filepath)
             raw_array_len = raw_array.size

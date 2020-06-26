@@ -19,12 +19,13 @@ fi
 FASTQNAME=$1
 DIRNAME=$2
 GENOME_SIZE=$3
-FLYE="/raid/shubham/nanopore_lossy_compression/Flye/bin/flye"
-REBALER="/raid/shubham/nanopore_lossy_compression/Rebaler/rebaler-runner.py"
-RACON_PATH="/raid/shubham/nanopore_lossy_compression/racon/build/bin/"
-MINIMAP2_PATH="/raid/shubham/nanopore_lossy_compression/minimap2-2.17/"
-MEDAKA_VENV_PATH="/raid/shubham/nanopore_lossy_compression/medaka/venv/bin/activate"
-MEDAKA_BONITO="/raid/shubham/nanopore_lossy_compression/bonito/oukeesfjc6406t5po0x2hlw97lnelkyl.hdf5"
+FLYE=$WORKINGDIR/Flye-2.7.1/bin/flye
+REBALER=$WORKINGDIR/Rebaler-0.2.0/rebaler-runner.py
+RACON_PATH=$WORKINGDIR/racon-v1.4.13/build/bin/
+MINIMAP2_PATH=$WORKINGDIR/minimap2-2.17/
+MEDAKA_VENV_PATH=$WORKINGDIR/medaka/venv/bin/activate
+MEDAKA_BONITO=$WORKINGDIR/bonito_medaka/oukeesfjc6406t5po0x2hlw97lnelkyl.hdf5
+LOSSY_COMP_ENV_PATH=$WORKINGDIR/lossy_comp_env/bin/activate
 
 # create DIRNAME if doesn't already exist
 mkdir -p $DIRNAME
@@ -46,6 +47,6 @@ $REBALER --threads 8 $DIRNAME/flye/assembly.fasta $FASTQNAME.tmp.fastq > $DIRNAM
 # first go into virtual environment
 source $MEDAKA_VENV_PATH
 medaka_consensus -i $FASTQNAME.tmp.fastq -d $DIRNAME/rebaler.fasta -o $DIRNAME/medaka -t 12 -m $MEDAKA_BONITO
-deactivate
+source $LOSSY_COMP_ENV_PATH # reactivate original venv
 
 rm $FASTQNAME.tmp.fastq

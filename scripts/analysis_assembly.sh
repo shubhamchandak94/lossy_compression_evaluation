@@ -21,8 +21,8 @@ fi
 ASSEMBLED_FILE=$1
 REFERENCE_FILE=$2
 LABEL=$3
-SCRIPT_PATH="/raid/shubham/nanopore_lossy_compression/lossy_compression_evaluation/scripts"
-MINIMAP2="/raid/shubham/nanopore_lossy_compression/minimap2-2.17/minimap2"
+SCRIPT_PATH=$WORKINGDIR/lossy_compression_evaluation/scripts
+MINIMAP2=$WORKINGDIR/minimap2-2.17/minimap2
 
 python3 $SCRIPT_PATH/chop_up_assembly.py $1 100000 > $ASSEMBLED_FILE.pieces.fasta
 $MINIMAP2 -x asm5 -t 8 -c $REFERENCE_FILE $ASSEMBLED_FILE.pieces.fasta > $ASSEMBLED_FILE.pieces.paf

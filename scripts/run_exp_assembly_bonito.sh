@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROOTDIR="/raid/shubham/nanopore_lossy_compression/data/Staphylococcus_aureus_CAS38_02/"
+ROOTDIR=$WORKINGDIR/data/Staphylococcus_aureus_CAS38_02/
 BASECALLDIR=$ROOTDIR/experiments/bonito/basecalled_fastq/
 ASSEMBLYDIR=$ROOTDIR/experiments/bonito/assembly/
 LEN="2.9m"

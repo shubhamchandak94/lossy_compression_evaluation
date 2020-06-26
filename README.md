@@ -12,7 +12,7 @@ Plots and jupyter notebooks for generating plots is along with the corresponding
 
 ## Steps for reproducing
 
-Below are the steps for installing all the tools and data required for reproducing the results in the preprint. We will assume everything is installed in a working directory `$WORKINGDIR`.
+Below are the steps for installing all the tools and data required for reproducing the results in the preprint. We will assume everything is installed in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`.
 
 ```
 cd $WORKINGDIR
@@ -35,14 +35,19 @@ pip install -q --upgrade pip
 #### ont_fast5_api
 Utility functions for conversion from multi to single read fast5
 ```
-pip3 install ont_fast5_api
+pip install ont_fast5_api
+```
+
+#### h5py
+```
+pip install h5py
 ```
 
 #### Guppy basecaller
 ```
-wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_4.0.11_linux64.tar.gz
-tar -xzvf ont-guppy_4.0.11_linux64.tar.gz
-rm ont-guppy_4.0.11_linux64.tar.gz
+wget https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy_3.6.1_linux64.tar.gz
+tar -xzvf ont-guppy_3.6.1_linux64.tar.gz
+rm ont-guppy_3.6.1_linux64.tar.gz
 ```
 
 #### Megalodon
@@ -63,10 +68,11 @@ cd ../
 
 #### LFZip
 ```
-conda create --name lfzip_env
-conda activate lfzip_env
+conda create -n python3_6_env python=3.6
+conda activate python3_6_env
 conda config --add channels conda-forge
 conda install lfzip=1.1
+pip install h5py
 conda deactivate
 ```
 
@@ -100,13 +106,23 @@ cd ../
 rm v2.17.tar.gz
 ```
 
+#### Samtools
+```
+wget https://github.com/samtools/samtools/releases/download/1.10/samtools-1.10.tar.bz2
+tar -xjvf samtools-1.10.tar.bz2
+cd samtools-1.10/
+./configure
+make
+cd ../
+rm samtools-1.10.tar.bz2
+```
+
 #### Medaka
 ```
 git clone https://github.com/nanoporetech/medaka.git
 cd medaka/
 git checkout v1.0.3
-conda create -n python3_6_env python=3.6
-conda activate python3_6_env
+conda activate python3_6_env  # created above for lfzip
 sed -i 's/tensorflow/tensorflow-gpu/' requirements.txt # to use GPUs
 make install
 cd ../
@@ -145,10 +161,11 @@ rm 2.7.1.tar.gz
 
 #### VBZ python plugin
 ```
-conda activate python3_6_env # created above for Medaka
+conda activate python3_6_env # created above for lfzip
 wget https://github.com/nanoporetech/vbz_compression/releases/download/v1.0.1/pyvbz-1.0.1-cp36-cp36m-linux_x86_64.whl
 pip install pyvbz-1.0.1-cp36-cp36m-linux_x86_64.whl
 conda deactivate
+rm pyvbz-1.0.1-cp36-cp36m-linux_x86_64.whl
 ```
 
 #### fastmer
