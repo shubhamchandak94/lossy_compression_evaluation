@@ -4,9 +4,9 @@
 
 This is a study exploring lossy compression for nanopore raw signal data and the impact on basecall and consensus accuracy. Parts of the analysis pipeline, code and the datasets are obtained from the works in https://github.com/rrwick/Basecalling-comparison and https://github.com/rrwick/August-2019-consensus-accuracy-update.
 
-Instructions for installing the tools used in the study are available in `(TOOLS.md)[TOOLS.md]`.
+Instructions for installing the tools used in the study are available in [`TOOLS.md`](TOOLS.md).
 
-Instructions for downloading the datasets used in the study are available in `(DATASETS.md)[DATASETS.md]`.
+Instructions for downloading the datasets used in the study are available in [`DATASETS.md`](DATASETS.md).
 
 The code and the corresponding README is available in the `scripts/` directory.
 
