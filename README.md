@@ -8,11 +8,11 @@ Instructions for installing the tools used in the study are available in [`TOOLS
 
 Instructions for downloading the datasets used in the study are available in [`DATASETS.md`](DATASETS.md).
 
-The code and the corresponding README is available in the `scripts/` directory.
+The code and the corresponding README is available in the [`scripts/`](scripts/) directory.
 
-The data obtained from the analysis in tsv format and the corresponding README is available in the `data/` directory.
+The data obtained from the analysis in tsv format and the corresponding README is available in the [`data/`](data/) directory.
 
-Plots and jupyter notebooks for generating plots along with the corresponding README is available in the `plots/` directory.
+Plots and jupyter notebooks for generating plots along with the corresponding README is available in the [`plots/`](plots/) directory.
 
 ## License
 
