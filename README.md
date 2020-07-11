@@ -121,7 +121,7 @@ rm samtools-1.10.tar.bz2
 ```
 git clone https://github.com/nanoporetech/medaka.git
 cd medaka/
-git checkout v1.0.3
+git checkout v1.0.3 # used v0.11.5 in some cases where v1.0.3 errored 
 conda activate python3_6_env  # created above for lfzip
 sed -i 's/tensorflow/tensorflow-gpu/' requirements.txt # to use GPUs
 make install
@@ -147,6 +147,7 @@ rm racon-v1.4.13.tar.gz
 wget https://github.com/rrwick/Rebaler/archive/v0.2.0.tar.gz
 tar -xzvf v0.2.0.tar.gz
 rm v0.2.0.tar.gz
+pip install biopython
 ```
 
 #### Flye
@@ -178,6 +179,15 @@ git checkout ff822506aa12958a203c093257cdbfcf7abd6308
 cd ../
 ```
 
+#### Rerio
+```
+git clone https://github.com/nanoporetech/rerio
+cd rerio
+git checkout 82d5b18
+./download_model.py basecall_models/res_dna_r941_min_modbases_5mC_CpG_v001
+cd ../
+```
+
 ### Download data
 ```
 cd $WORKINGDIR/
@@ -205,7 +215,7 @@ find fast5 -mindepth 2 -type f -exec mv -t fast5 -i '{}' +
 ```
 Remove temporary files
 ```
-rm -r ecolik12mg1655_fast5_R10.3.tar.gz srv multi_to_single_fast5.py
+rm -r ecolik12mg1655_fast5_R10.3.tar.gz srv
 mkdir experiments/
 cd ../
 ```
@@ -249,6 +259,33 @@ Cleanup:
 rm fast5/Staphylococcus_aureus_CAS38_02_fast5s.tar.gz
 mkdir experiments/
 cd ../
+```
+
+#### NA12878 (for methylation)
+```
+mkdir NA12878 && cd NA12878/
+
+Reference:
+```
+wget ftp://ftp.ensembl.org/pub/release-100/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+```
+
+NA12878 data from https://www.nature.com/articles/nbt.4060 (small subset of data):
+```
+mkdir fast5 && cd fast5/
+wget http://s3.amazonaws.com/nanopore-human-wgs/rel6/MultiFast5Tars/FAB45280-222619780_Multi_Fast5.tar
+tar -xvf FAB45280-222619780_Multi_Fast5.tar
+multi_to_single_fast5 -i Norwich/FAB45280-222619780_Multi/ -s .
+rm -r Norwich/
+rm FAB45280-222619780_Multi_Fast5.tar
+find . -mindepth 2 -type f -exec mv -t . -i '{}' +
+```
+
+Bisulfite data for benchmarking (source: https://www.nature.com/articles/nature11247):
+```
+wget https://www.encodeproject.org/files/ENCFF835NTC/@@download/ENCFF835NTC.bed.gz
+gunzip ENCFF835NTC.bed.gz
 ```
 
 ## License

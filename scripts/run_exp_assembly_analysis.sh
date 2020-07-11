@@ -15,7 +15,7 @@ ASSEMBLY_DIR=$1
 NUM_EXP=$2
 REFERENCE_FILE=$3
 OUTFILE=$ASSEMBLY_DIR/summary.tsv
-printf "Assembly\tnum_contigs\ttotal_length\tidentity\n" > $OUTFILE
+printf "Assembly\tnum_contigs\ttotal_length\tidentity\t4mer_acc\t5mer_acc\t6mer_acc\t7mer_acc\t8mer_acc\t9mer_acc\n" > $OUTFILE
 
 
 # assembly

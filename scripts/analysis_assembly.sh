@@ -22,12 +22,16 @@ ASSEMBLED_FILE=$1
 REFERENCE_FILE=$2
 LABEL=$3
 SCRIPT_PATH=$WORKINGDIR/lossy_compression_evaluation/scripts
-MINIMAP2=$WORKINGDIR/minimap2-2.17/minimap2
+MINIMAP2_PATH=$WORKINGDIR/minimap2-2.17/
+SAMTOOLS_PATH=$WORKINGDIR/samtools-1.10/
+
+export PATH=$PATH:$MINIMAP2_PATH:$SAMTOOLS_PATH
 
 python3 $SCRIPT_PATH/chop_up_assembly.py $1 100000 > $ASSEMBLED_FILE.pieces.fasta
-$MINIMAP2 -x asm5 -t 8 -c $REFERENCE_FILE $ASSEMBLED_FILE.pieces.fasta > $ASSEMBLED_FILE.pieces.paf
+minimap2 -x asm5 -t 8 -c $REFERENCE_FILE $ASSEMBLED_FILE.pieces.fasta > $ASSEMBLED_FILE.pieces.paf
 python3 $SCRIPT_PATH/read_length_identity.py $ASSEMBLED_FILE.pieces.fasta $ASSEMBLED_FILE.pieces.paf > $ASSEMBLED_FILE.pieces.data
 printf $3"\t"
+
 awk '
 BEGIN {
     num_contigs=0
@@ -43,5 +47,8 @@ END {
     printf num_contigs"\t"
     printf total_len"\t"
 }' $ASSEMBLED_FILE
-python3 $SCRIPT_PATH/medians.py $ASSEMBLED_FILE.pieces.data
+python3 $SCRIPT_PATH/medians.py $ASSEMBLED_FILE.pieces.data | tr -d '\n'
 rm $ASSEMBLED_FILE.pieces.*
+printf "\t"
+python $WORKINGDIR/assembly_accuracy/fastmer.py --reference $REFERENCE_FILE --assembly $ASSEMBLED_FILE | tail -n 1 | cut -f 9-
+

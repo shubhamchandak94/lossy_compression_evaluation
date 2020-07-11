@@ -6,7 +6,7 @@ if [ "$#" -ne 3 ]; then
     exit 1
 fi
 
-# Usage ./basecall_bonito.sh INFASTQDIRNAME OUTFASTQDIRNAME NUMREADS
+# Usage ./subsample_fastqs.sh INFASTQDIRNAME OUTFASTQDIRNAME NUMREADS
 # INFASTQDIRNAME is directory with original fastq files
 # OUTFASTQDIRNAME is directory to put subsampled fastq
 # NUMREADS is number of reads in subsampled fastq
@@ -16,7 +16,7 @@ fi
 INDIRNAME=$1
 OUTDIRNAME=$2
 NUMREADS=$3
-SEQTK="/raid/shubham/nanopore_lossy_compression/seqtk/seqtk"
+SEQTK=$WORKINGDIR/seqtk-1.3/seqtk
 
 mkdir -p $OUTDIRNAME
 for f in $INDIRNAME/*.fastq; do

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-ROOTDIR=$WORKINGDIR/data/Staphylococcus_aureus_CAS38_02/
+ROOTDIR=$WORKINGDIR/data/Klebsiella_pneumoniae_INF032/
 BASECALLDIR=$ROOTDIR/experiments/bonito/basecalled_fastq/
 ASSEMBLYDIR=$ROOTDIR/experiments/bonito/assembly/
-LEN="2.9m"
+LEN="5.5m"
 
 # assembly
 ./assembly_bonito.sh $BASECALLDIR/lossless.fastq $ASSEMBLYDIR/lossless $LEN

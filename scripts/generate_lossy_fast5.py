@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+'''
+Code to generate lossily reconstructed fast5 files and also write the sizes to a file.
+Can also be used for writing sizes of lossless compression to a file.
+Takes care of all single-read fast5 files in a directory - if a run fails due to some hdf5 issue,
+just run the script again and it will not redo the work already finished.
+'''
+
 import re
 import h5py
 import shutil
