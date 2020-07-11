@@ -1,5 +1,5 @@
-Total high confidence positive sites on genome	Total high confidence negative sites on genome
-5409974	4666632
+Total high confidence positive sites on genome	Total high confidence negative sites on genome								
+5409974	4666632								
 Label	Ground truth positive	Ground truth negative	Predicted positive	Predicted negative	False positive	False negative	Precision	Recall	AUC
 lossless	671264	560589	600303	631550	31282	102243	0.94789	0.84769	0.94472
 LFZip_maxerror_1	671100	560402	600493	631009	31475	102082	0.94758	0.84789	0.94468
