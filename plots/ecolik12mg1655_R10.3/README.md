@@ -28,10 +28,6 @@
 ### Assembly accuracy across assembly stages
  --- 
 ![assemblers_guppy_hac_assembly](png_figures/assemblers_guppy_hac_assembly.png)
- --- 
-![assemblers_bonito_assembly](png_figures/assemblers_bonito_assembly.png)
- --- 
-![assemblers_guppy_fast_assembly](png_figures/assemblers_guppy_fast_assembly.png)
 
 ### Assembly accuracy across subsampling
  --- 
@@ -42,6 +38,10 @@
 ![additional_subsampled_1x_medaka_guppy_hac_assembly](png_figures/additional_subsampled_1x_medaka_guppy_hac_assembly.png)
  --- 
 ![additional_subsampled_2x_medaka_guppy_hac_assembly](png_figures/additional_subsampled_2x_medaka_guppy_hac_assembly.png)
+
+**Note for 2x subsampled assembly:** Although the num_contigs plot seems to show that lossy compression leads to fragmented assemblies, we found that >99.9% of the 
+total assembly length is contained in the largest contig for all compression parameters.
+
  --- 
 ![additional_subsampled_4x_medaka_guppy_hac_assembly](png_figures/additional_subsampled_4x_medaka_guppy_hac_assembly.png)
  --- 
