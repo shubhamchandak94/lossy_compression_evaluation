@@ -1,0 +1,1 @@
+Each subdirectory contains the iPython scripts used to generate the plots, the figures in pdf and png formats. The README files in the respective subdirectories also display the plots for easy visualization.
