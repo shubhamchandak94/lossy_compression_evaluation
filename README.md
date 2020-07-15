@@ -1,6 +1,6 @@
 # Impact of lossy compression of nanopore raw signal data on basecall and consensus accuracy
 
-### [BioRxiv preprint](https://www.biorxiv.org/content/10.1101/2020.04.19.049262v1)
+### [BioRxiv preprint](https://www.biorxiv.org/content/10.1101/2020.04.19.049262v2)
 
 This is a study exploring lossy compression for nanopore raw signal data and the impact on basecall and consensus accuracy. Parts of the analysis pipeline, code and the datasets are obtained from the works in https://github.com/rrwick/Basecalling-comparison and https://github.com/rrwick/August-2019-consensus-accuracy-update.
 
