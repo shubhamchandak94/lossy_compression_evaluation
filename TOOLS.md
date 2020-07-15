@@ -172,7 +172,7 @@ Performs further polishing of the Rebaler consensus using a neural network based
 ```
 git clone https://github.com/nanoporetech/medaka.git
 cd medaka/
-git checkout v1.0.3 # used v0.11.5 in some cases where v1.0.3 errored 
+git checkout v1.0.3 # used v0.11.5 for guppy_fast due to errors in v1.0.3
 conda activate python3_6_env  # created above for lfzip
 make install
 cd ../
