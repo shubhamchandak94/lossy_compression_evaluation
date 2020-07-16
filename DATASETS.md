@@ -8,6 +8,46 @@ mkdir -p data/
 cd data/
 ```
 
+#### S. aureus
+Source: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1727-y
+```
+mkdir Staphylococcus_aureus_CAS38_02/
+cd Staphylococcus_aureus_CAS38_02/
+mkdir fast5/ && cd fast5/
+wget -O Staphylococcus_aureus_CAS38_02_fast5s.tar.gz https://bridges.monash.edu/ndownloader/files/14260568
+tar -xzvf Staphylococcus_aureus_CAS38_02_fast5s.tar.gz
+cd ../
+wget -O Staphylococcus_aureus_CAS38_02_reference.fasta.gz https://bridges.monash.edu/ndownloader/files/14260241
+gunzip Staphylococcus_aureus_CAS38_02_reference.fasta.gz
+```
+
+Cleanup:
+```
+rm fast5/Staphylococcus_aureus_CAS38_02_fast5s.tar.gz
+mkdir experiments/
+cd ../
+```
+
+#### K. pneumoniae
+Source: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1727-y
+```
+mkdir Klebsiella_pneumoniae_INF032/
+cd Klebsiella_pneumoniae_INF032/
+mkdir fast5/ && cd fast5/
+wget -O Klebsiella_pneumoniae_INF032_fast5s.tar.gz https://bridges.monash.edu/ndownloader/files/15188573
+tar -xzvf Klebsiella_pneumoniae_INF032_fast5s.tar.gz
+cd ../
+wget -O Klebsiella_pneumoniae_INF032_reference.fasta.gz https://bridges.monash.edu/ndownloader/files/14260223
+gunzip Klebsiella_pneumoniae_INF032_reference.fasta.gz
+```
+
+Clean up:
+```
+rm fast5/Klebsiella_pneumoniae_INF032_fast5s.tar.gz
+mkdir experiments/
+cd ../
+```
+
 #### E. coli
 Source: http://albertsenlab.org/we-ar10-3-pretty-close-now/
 ```
@@ -33,22 +73,30 @@ mkdir experiments/
 cd ../
 ```
 
-
-#### K. pneumoniae
-Source: https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1727-y
+#### NA12878 (for methylation)
 ```
-mkdir Klebsiella_pneumoniae_INF032/
-cd Klebsiella_pneumoniae_INF032/
-mkdir fast5/ && cd fast5/
-wget -O Klebsiella_pneumoniae_INF032_fast5s.tar.gz https://bridges.monash.edu/ndownloader/files/15188573
-tar -xzvf Klebsiella_pneumoniae_INF032_fast5s.tar.gz
-cd ../
-wget -O Klebsiella_pneumoniae_INF032_reference.fasta.gz https://bridges.monash.edu/ndownloader/files/14260223
-gunzip Klebsiella_pneumoniae_INF032_reference.fasta.gz
+mkdir NA12878 && cd NA12878/
+
+Reference:
+```
+wget ftp://ftp.ensembl.org/pub/release-100/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+gunzip Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
 ```
 
-Clean up:
+NA12878 data from https://www.nature.com/articles/nbt.4060 (small subset of data):
 ```
-rm fast5/Klebsiella_pneumoniae_INF032_fast5s.tar.gz
-mkdir experiments/
-cd ../
+mkdir fast5 && cd fast5/
+wget http://s3.amazonaws.com/nanopore-human-wgs/rel6/MultiFast5Tars/FAB45280-222619780_Multi_Fast5.tar
+tar -xvf FAB45280-222619780_Multi_Fast5.tar
+multi_to_single_fast5 -i Norwich/FAB45280-222619780_Multi/ -s .
+rm -r Norwich/
+rm FAB45280-222619780_Multi_Fast5.tar
+find . -mindepth 2 -type f -exec mv -t . -i '{}' +
+```
+
+Bisulfite data for benchmarking (source: https://www.nature.com/articles/nature11247):
+```
+wget https://www.encodeproject.org/files/ENCFF835NTC/@@download/ENCFF835NTC.bed.gz
+gunzip ENCFF835NTC.bed.gz
+```
+
