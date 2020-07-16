@@ -76,6 +76,7 @@ cd ../
 #### NA12878 (for methylation)
 ```
 mkdir NA12878 && cd NA12878/
+```
 
 Reference:
 ```
