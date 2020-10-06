@@ -1,6 +1,6 @@
 ### Datasets
 
-The instructions for downloading the datasets used in the study are listed below. We will assume everything is stored in a working directory `$WORKINGDIR` and this variable is set using export `WORKINGDIR=/MY/PATH`.
+The instructions for downloading the datasets used in the study are listed below. We will assume everything is stored in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`.
 
 ```
 cd $WORKINGDIR/
@@ -99,5 +99,25 @@ Bisulfite data for benchmarking (source: https://www.nature.com/articles/nature1
 ```
 wget https://www.encodeproject.org/files/ENCFF835NTC/@@download/ENCFF835NTC.bed.gz
 gunzip ENCFF835NTC.bed.gz
+```
+
+Download NA12878 VCF from GIAB and use bcftools to generate a ground-truth fasta for evaluating basecall accuracy:
+```
+wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh38/HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz
+wget ftp://ftp-trace.ncbi.nlm.nih.gov/ReferenceSamples/giab/release/NA12878_HG001/latest/GRCh38/HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz.tbi
+
+# handle different chromosome notation in vcf and fasta
+for i in {1..22} X Y MT;
+do
+    echo "chr$i $i" > chr_name_conv.txt
+done
+$WORKINGDIR/bcftools-1.11/bcftools annotate --rename-chrs chr_name_conv.txt HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer.vcf.gz > HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer_nochr.vcf
+
+# compress and index
+$WORKINGDIR/bcftools-1.11/bcftools view HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer_nochr.vcf -Oz -o HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM_1-X_v.3.3.2_highconf_PGandRTGphasetransfer_nochr.vcf.gz
+$WORKINGDIR/bcftools-1.11/bcftools index HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer_nochr.vcf.gz
+
+# create NA12878 fasta
+$WORKINGDIR/bcftools-1.11/bcftools consensus -p chr -f Homo_sapiens.GRCh38.dna.primary_assembly.fa -o NA12878_reference.fa HG001_GRCh38_GIAB_highconf_CG-IllFB-IllGATKHC-Ion-10X-SOLID_CHROM1-X_v.3.3.2_highconf_PGandRTGphasetransfer_nochr.vcf.gz
 ```
 

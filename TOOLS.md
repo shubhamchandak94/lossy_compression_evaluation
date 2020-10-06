@@ -77,6 +77,18 @@ git checkout ff822506aa12958a203c093257cdbfcf7abd6308
 cd ../
 ```
 
+#### BCFtools
+Used for generating fasta for NA12878 from reference fasta and GIAB VCF file.
+```
+wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2
+tar -xjvf bcftools-1.11.tar.bz2
+cd bcftools-1.11/
+./configure
+make
+cd ../
+rm bcftools-1.11.tar.bz2
+```
+
 ### Compressors
 #### LFZip
 Lossy compressor
