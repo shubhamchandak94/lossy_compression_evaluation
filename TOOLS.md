@@ -21,7 +21,7 @@ pip install -q --upgrade pip
 ### Utility libraries
 
 #### ont_fast5_api
-Utility functions for conversion from multi to single read fast5
+Utility functions for conversion from multi to single read fast5.
 ```
 pip install ont_fast5_api
 ```
@@ -43,7 +43,7 @@ rm v1.3.tar.gz
 ```
 
 #### Minimap2
-Aligner used by various tools in the pipeline/
+Aligner used by various tools in the pipeline.
 ```
 wget https://github.com/lh3/minimap2/archive/v2.17.tar.gz
 cd minimap2-2.17
