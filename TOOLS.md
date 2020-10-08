@@ -6,8 +6,6 @@ Below are the steps for installing all the tools and data required for reproduci
 cd $WORKINGDIR
 ```
 
-### Installing tools
-
 #### Clone this git repository
 ```
 git clone https://github.com/shubhamchandak94/lossy_compression_evaluation
