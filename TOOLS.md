@@ -1,6 +1,6 @@
 ## Installing tools
 
-Below are the steps for installing all the tools and data required for reproducing the results in the study. We will assume everything is installed in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`. All experiments were performed on an Ubuntu 18.04.4 server with 40 Intel Xeon processors (2.2 GHz), 260 GB RAM and 8 Nvidia TITAN X (Pascal) GPUs. The default Python version was 3.7.6 (Anaconda).
+Below are the steps for installing all the tools required for reproducing the results in the study. We will assume everything is installed in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`. All experiments were performed on an Ubuntu 18.04.4 server with 40 Intel Xeon processors (2.2 GHz), 260 GB RAM and 8 Nvidia TITAN X (Pascal) GPUs. The default Python version was 3.7.6 (Anaconda).
 
 ```
 cd $WORKINGDIR
