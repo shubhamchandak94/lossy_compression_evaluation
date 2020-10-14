@@ -1,0 +1,1796 @@
+[2020-10-01 01:16:59] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 01:16:59] INFO: >>>STAGE: configure
+[2020-10-01 01:16:59] INFO: Configuring run
+[2020-10-01 01:17:00] INFO: Total read length: 242556584
+[2020-10-01 01:17:00] INFO: Input genome size: 2900000
+[2020-10-01 01:17:00] INFO: Estimated coverage: 83
+[2020-10-01 01:17:00] INFO: Reads N50/N90: 24761 / 12115
+[2020-10-01 01:17:00] INFO: Minimum overlap set to 5000
+[2020-10-01 01:17:00] INFO: Selected k-mer size: 15
+[2020-10-01 01:17:00] INFO: >>>STAGE: assembly
+[2020-10-01 01:17:00] INFO: Assembling disjointigs
+[2020-10-01 01:17:00] INFO: Reading sequences
+[2020-10-01 01:17:01] INFO: Generating solid k-mer index
+[2020-10-01 01:17:20] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:17:26] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:17:38] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:18:48] INFO: Extending reads
+[2020-10-01 01:24:41] INFO: Overlap-based coverage: 77
+[2020-10-01 01:24:41] INFO: Median overlap divergence: 0.0742816
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:25:43] INFO: Assembled 1 disjointigs
+[2020-10-01 01:25:44] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:26:26] INFO: >>>STAGE: consensus
+[2020-10-01 01:26:26] INFO: Running Minimap2
+[2020-10-01 01:26:44] INFO: Computing consensus
+[2020-10-01 01:29:05] INFO: Alignment error rate: 0.087050
+[2020-10-01 01:29:05] INFO: >>>STAGE: repeat
+[2020-10-01 01:29:05] INFO: Building and resolving repeat graph
+[2020-10-01 01:29:05] INFO: Parsing disjointigs
+[2020-10-01 01:29:05] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 01:29:30] INFO: Median overlap divergence: 0.0240059
+[2020-10-01 01:29:30] INFO: Parsing reads
+[2020-10-01 01:29:31] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:30:16] INFO: Aligned read sequence: 240264297 / 242556584 (0.99055)
+[2020-10-01 01:30:16] INFO: Median overlap divergence: 0.0199941
+[2020-10-01 01:30:16] INFO: Mean edge coverage: 84
+[2020-10-01 01:30:16] INFO: Simplifying the graph
+[2020-10-01 01:30:16] INFO: >>>STAGE: contigger
+[2020-10-01 01:30:16] INFO: Generating contigs
+[2020-10-01 01:30:16] INFO: Reading sequences
+[2020-10-01 01:30:17] INFO: Generated 1 contigs
+[2020-10-01 01:30:17] INFO: Added 0 scaffold connections
+[2020-10-01 01:30:17] INFO: >>>STAGE: polishing
+[2020-10-01 01:30:17] INFO: Polishing genome (1/1)
+[2020-10-01 01:30:17] INFO: Running minimap2
+[2020-10-01 01:30:33] INFO: Separating alignment into bubbles
+[2020-10-01 01:33:35] INFO: Alignment error rate: 0.049924
+[2020-10-01 01:33:35] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:33:59] INFO: >>>STAGE: finalize
+[2020-10-01 01:33:59] INFO: Assembly statistics:
+
+	Total length:	2901796
+	Fragments:	1
+	Fragments N50:	2901796
+	Largest frg:	2901796
+	Scaffolds:	0
+	Mean coverage:	84
+
+[2020-10-01 01:33:59] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//lossless.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//lossless/flye/ --threads 8"
+	User time (seconds): 2918.60
+	System time (seconds): 72.59
+	Percent of CPU this job got: 293%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:59.77
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4580708
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 38759013
+	Voluntary context switches: 447683
+	Involuntary context switches: 15157
+	Swaps: 0
+	File system inputs: 792
+	File system outputs: 875520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 01:33:59)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,796
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 01:33:59)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,723 initial alignments
+                                             83.98x depth
+Culling alignments to a non-redundant set... 77 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m48185330(+):0-35414[0m → [32mb90b3021(+):0-45685[0m → [32m99f279ad(+):1597-70299[0m → [32m361e58ed(+):0-69031[0m → [32mbbd4ba08(+):0-24554[0m → [32m98d1cb74(-):0-39884[0m → [32mc3197f35(+):8903-49707[0m → [32m284651c8(-):16384-38778[0m → [32mafdecabd(-):0-43726[0m → [32me5f0f7ad(-):7683-42587[0m → [32m75b2df9e(+):0-24019[0m → [32m6405383d(+):3111-70264[0m → [32m691fdefa(-):6631-17419[0m → [32m7ff7d4c1(-):0-71005[0m → [32m74aa7879(-):4636-26074[0m → [32m803e9197(+):0-43891[0m → [32md477e490(+):2695-40049[0m → [32me99b1c45(-):0-68857[0m → [32mc6a770c8(-):0-30198[0m → [32m6b7a94f5(+):4436-30183[0m → [32mfee50e7d(-):0-55477[0m → [32m7c65f599(-):0-49380[0m → [32mb02e687c(+):21162-34506[0m → [32m30eb4700(-):273-13827[0m → [32mcfaa0889(-):0-71138[0m → [32m3f442da9(+):17889-40511[0m → [32mdeb01e2f(-):0-30371[0m → [32mc607abcd(+):705-76252[0m → [32mfd4de596(-):0-37646[0m → [32m94f57d02(-):0-55850[0m → [32m21def7c2(+):8942-32553[0m → [32m8f7fc283(+):0-40865[0m → [32m1f2f43aa(+):4064-31020[0m → [32m3578ef04(-):0-32995[0m → [32md89903a8(-):6934-24407[0m → [32m7bd97669(-):0-23964[0m → [32m636f180a(+):14750-44859[0m → [32m762474ac(-):0-47341[0m → [32ma8a2cd6c(-):9076-37550[0m → [32mc4d31b74(-):0-24529[0m → [32m6b0342d4(-):0-50293[0m → [32m6b519a58(+):78-28583[0m → [32me6542bf2(+):0-51684[0m → [32m1a15af10(-):445-42150[0m → [32m5ca963b4(-):0-61947[0m → [32m8866033f(+):19628-47102[0m → [32m8c1c16d2(+):4511-57661[0m → [32m92b49655(-):0-47340[0m → [32m53b41a1e(-):267-41997[0m → [32m94ac5cda(+):0-29100[0m → [32m853fedf4(+):9347-42910[0m → [32m64345a0f(-):0-52092[0m → [32mcd53108f(+):0-36500[0m → [32m7e998c50(-):7549-57977[0m → [32m539174e8(+):0-30180[0m → [32mae9acc84(+):4187-46663[0m → [32m13756882(-):25618-35043[0m → [32mc0d8ad0b(+):0-45968[0m → [32m386e7839(+):29923-30815[0m → [32m64e9f112(+):0-47248[0m → [32m80838b7f(+):0-50361[0m → [32m2c23d452(+):4120-38479[0m → [32mdb443701(-):0-48739[0m → [32m85040ffb(-):16824-47639[0m → [32ma36f4dae(+):30669-31561[0m → [32me252c066(-):0-47443[0m → [32m84d33d87(+):12726-31738[0m → [32me74acad1(-):0-38869[0m → [32m223c5106(-):5903-50840[0m → [32mefcf0730(-):20852-42570[0m → [32mf7532eb0(+):12907-35612[0m → [32m6a70dc0d(+):19330-56749[0m → [32m5e0bbd96(-):0-10937[0m → [32mdb0bcabf(+):0-32865[0m → [32m2c7d7b5f(+):2857-44709[0m → [32m7865f07d(-):0-38785[0m → [32mba22fe13(+):13824-54256[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 01:35:29)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,890,634      387,290,981
+1           2,901,814      415,982,454
+2           2,901,925      416,045,343
+3           2,901,927      416,048,748
+4           2,901,894      416,051,478
+5           2,901,941      416,065,355
+6           2,901,929      416,040,442
+7           2,901,918      416,048,176
+8           2,901,881      416,049,349
+9           2,901,906      416,052,216
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 01:50:10)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,852      139,819,868
+1           2,901,887      139,838,380
+
+Final assembly size: 2,901,886 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//lossless/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//lossless.fastq"
+	User time (seconds): 6787.56
+	System time (seconds): 77.58
+	Percent of CPU this job got: 630%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:08.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1044784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 6
+	Minor (reclaiming a frame) page faults: 53239286
+	Voluntary context switches: 435262
+	Involuntary context switches: 42496
+	Swaps: 0
+	File system inputs: 2104
+	File system outputs: 554720
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.132*1.01] collected minimizers
+[M::mm_idx_gen::0.161*1.36] sorted minimizers
+[M::main::0.195*1.30] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.202*1.29] distinct minimizers: 516372 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/rebaler.fasta
+[M::main] Real time: 0.206 sec; CPU: 0.264 sec; Peak RSS: 0.031 GB
+[M::main::0.048*1.03] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.058*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.065*1.02] distinct minimizers: 516372 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::worker_pipeline::15.922*5.87] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/lossless/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/lossless.fastq
+[M::main] Real time: 15.944 sec; CPU: 93.548 sec; Peak RSS: 1.171 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[01:52:53 - Predict] Processing region(s): contig_1:0-2901886
+[01:52:53 - Predict] Setting tensorflow threads to 8.
+[01:52:53 - Predict] Processing 3 long region(s) with batching.
+[01:52:53 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[01:52:53 - ModelLoad] Building model with cudnn optimization: False
+[01:52:55 - DLoader] Initializing data loader
+[01:52:55 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[01:52:55 - PWorker] Running inference for 2.9M draft bases.
+[01:52:55 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[01:52:55 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901886.
+[01:52:57 - Feature] Processed contig_1:1998000.0-2901885.0 (median depth 77.0)
+[01:52:57 - Sampler] Took 2.31s to make features.
+[01:52:57 - Feature] Processed contig_1:999000.0-1998999.0 (median depth 81.0)
+[01:52:57 - Sampler] Took 2.45s to make features.
+[01:52:57 - Feature] Processed contig_1:0.0-999999.0 (median depth 90.0)
+[01:52:57 - Sampler] Took 2.53s to make features.
+[01:53:06 - PWorker] 18.2% Done (0.5/2.9 Mbases) in 11.6s
+[01:53:06 - PWorker] Samples in cache: 300.
+[01:53:16 - PWorker] Samples in cache: 258.
+[01:53:25 - PWorker] 54.5% Done (1.6/2.9 Mbases) in 30.5s
+[01:53:25 - PWorker] Samples in cache: 158.
+[01:53:34 - PWorker] Samples in cache: 58.
+[01:53:43 - PWorker] 89.9% Done (2.6/2.9 Mbases) in 48.5s
+[01:53:43 - PWorker] Samples in cache: 0.
+[01:53:49 - PWorker] All done, 0 remainder regions.
+[01:53:49 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[01:53:52 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[01:53:52 - Stitch] Stitching regions: ['contig_1:0-']
+[01:53:52 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[01:53:52 - Stitch] Processing contig_1:0-.
+[01:53:56 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//lossless/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//lossless.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//lossless/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//lossless/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 592.12
+	System time (seconds): 87.24
+	Percent of CPU this job got: 625%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:48.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8071972
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1212
+	Minor (reclaiming a frame) page faults: 22168312
+	Voluntary context switches: 3331496
+	Involuntary context switches: 931048
+	Swaps: 0
+	File system inputs: 370616
+	File system outputs: 776488
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 01:53:56] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 01:53:56] INFO: >>>STAGE: configure
+[2020-10-01 01:53:56] INFO: Configuring run
+[2020-10-01 01:53:57] INFO: Total read length: 242541673
+[2020-10-01 01:53:57] INFO: Input genome size: 2900000
+[2020-10-01 01:53:57] INFO: Estimated coverage: 83
+[2020-10-01 01:53:57] INFO: Reads N50/N90: 24754 / 12119
+[2020-10-01 01:53:57] INFO: Minimum overlap set to 5000
+[2020-10-01 01:53:57] INFO: Selected k-mer size: 15
+[2020-10-01 01:53:57] INFO: >>>STAGE: assembly
+[2020-10-01 01:53:57] INFO: Assembling disjointigs
+[2020-10-01 01:53:57] INFO: Reading sequences
+[2020-10-01 01:53:58] INFO: Generating solid k-mer index
+[2020-10-01 01:54:16] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:54:22] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:54:34] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 01:55:41] INFO: Extending reads
+[2020-10-01 02:01:19] INFO: Overlap-based coverage: 77
+[2020-10-01 02:01:19] INFO: Median overlap divergence: 0.0774652
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:02:30] INFO: Assembled 1 disjointigs
+[2020-10-01 02:02:30] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:03:15] INFO: >>>STAGE: consensus
+[2020-10-01 02:03:15] INFO: Running Minimap2
+[2020-10-01 02:03:31] INFO: Computing consensus
+[2020-10-01 02:05:49] INFO: Alignment error rate: 0.088026
+[2020-10-01 02:05:49] INFO: >>>STAGE: repeat
+[2020-10-01 02:05:49] INFO: Building and resolving repeat graph
+[2020-10-01 02:05:49] INFO: Parsing disjointigs
+[2020-10-01 02:05:49] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 02:06:15] INFO: Median overlap divergence: 0.023827
+[2020-10-01 02:06:15] INFO: Parsing reads
+[2020-10-01 02:06:16] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:07:02] INFO: Aligned read sequence: 240221467 / 242541673 (0.990434)
+[2020-10-01 02:07:02] INFO: Median overlap divergence: 0.0201352
+[2020-10-01 02:07:02] INFO: Mean edge coverage: 84
+[2020-10-01 02:07:02] INFO: Simplifying the graph
+[2020-10-01 02:07:02] INFO: >>>STAGE: contigger
+[2020-10-01 02:07:02] INFO: Generating contigs
+[2020-10-01 02:07:02] INFO: Reading sequences
+[2020-10-01 02:07:03] INFO: Generated 1 contigs
+[2020-10-01 02:07:03] INFO: Added 0 scaffold connections
+[2020-10-01 02:07:03] INFO: >>>STAGE: polishing
+[2020-10-01 02:07:03] INFO: Polishing genome (1/1)
+[2020-10-01 02:07:03] INFO: Running minimap2
+[2020-10-01 02:07:19] INFO: Separating alignment into bubbles
+[2020-10-01 02:10:16] INFO: Alignment error rate: 0.050214
+[2020-10-01 02:10:16] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:10:39] INFO: >>>STAGE: finalize
+[2020-10-01 02:10:39] INFO: Assembly statistics:
+
+	Total length:	2901778
+	Fragments:	1
+	Fragments N50:	2901778
+	Largest frg:	2901778
+	Scaffolds:	0
+	Mean coverage:	84
+
+[2020-10-01 02:10:39] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_1.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_1/flye/ --threads 8"
+	User time (seconds): 2954.89
+	System time (seconds): 74.59
+	Percent of CPU this job got: 301%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:43.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4309280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 38569904
+	Voluntary context switches: 402372
+	Involuntary context switches: 11179
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 875200
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 02:10:40)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,778
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 02:10:40)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,675 initial alignments
+                                             83.91x depth
+Culling alignments to a non-redundant set... 82 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32mb5aedcd1(-):0-17702[0m → [32m3f442da9(-):4332-30687[0m → [32mcfaa0889(+):0-71123[0m → [32m30eb4700(+):33110-46667[0m → [32mb02e687c(-):0-13343[0m → [32m7c65f599(+):0-49384[0m → [32mfee50e7d(+):1693-57164[0m → [32m5cae6105(-):16342-64539[0m → [32me99b1c45(+):0-76593[0m → [32md477e490(-):7781-47829[0m → [32maa4ede0b(+):27998-43233[0m → [32m032fb442(-):0-35598[0m → [32m74aa7879(+):14247-26206[0m → [32m7ff7d4c1(+):0-71004[0m → [32m691fdefa(+):43060-53846[0m → [32m6405383d(-):0-70273[0m → [32m46a00371(-):55527-63691[0m → [32m69b2b5ce(-):0-29432[0m → [32me5f0f7ad(+):26529-44674[0m → [32mafdecabd(+):0-43718[0m → [32md65ee6c5(+):25226-31955[0m → [32m3d14acc9(-):0-31387[0m → [32mc3197f35(-):15797-40801[0m → [32m98d1cb74(+):0-39897[0m → [32m58fde8f5(+):4040-18018[0m → [32m361e58ed(-):0-79641[0m → [32mb1f65121(-):16242-50239[0m → [32m4354233f(-):0-44645[0m → [32maaa74d14(-):6714-40569[0m → [32m48185330(-):13981-58093[0m → [32m9c10ed16(-):37687-55033[0m → [32mec870fa2(+):0-56630[0m → [32m2c7d7b5f(-):5505-46068[0m → [32mdb0bcabf(-):0-32855[0m → [32m5e0bbd96(+):21310-32240[0m → [32m6a70dc0d(-):9253-22438[0m → [32mc1832296(+):0-66896[0m → [32mce019d9c(-):0-32142[0m → [32m223c5106(+):30238-49945[0m → [32m49f4e820(-):0-36448[0m → [32m84d33d87(-):18347-29375[0m → [32mb755029f(+):0-51677[0m → [32ma36f4dae(-):17454-19525[0m → [32m85040ffb(+):0-30804[0m → [32mdb443701(+):0-48761[0m → [32mbd10cacf(+):5832-29013[0m → [32m3bf2382a(-):0-87139[0m → [32m386e7839(-):0-22532[0m → [32mc0d8ad0b(-):0-45978[0m → [32m13756882(+):12064-46724[0m → [32m088092c8(-):0-41020[0m → [32mde4dfa5e(-):10999-16957[0m → [32m011fe71c(+):0-17724[0m → [32m912f8103(-):0-48093[0m → [32mcd53108f(-):15044-36484[0m → [32m24c8589e(+):17635-71174[0m → [32m853fedf4(-):7478-36015[0m → [32m1b360f0e(+):0-16284[0m → [32m390c3512(+):0-58221[0m → [32m92b49655(+):0-47339[0m → [32m8c1c16d2(-):413-33131[0m → [32m4caa8e3a(-):0-47931[0m → [32m5ca963b4(+):0-61948[0m → [32m1a15af10(+):11929-32611[0m → [32m265a1142(+):0-79041[0m → [32m6b519a58(-):37656-59773[0m → [32m6b0342d4(+):0-50283[0m → [32mc4d31b74(+):15039-39559[0m → [32ma8a2cd6c(+):15087-43572[0m → [32m762474ac(+):0-47350[0m → [32m99e2e689(+):33107-50510[0m → [32m7d90457f(-):9600-32939[0m → [32md0bf1b28(+):17899-38392[0m → [32m650c61fa(+):3802-39906[0m → [32m1f2f43aa(-):7394-41533[0m → [32m8f7fc283(-):0-40880[0m → [32m9ca9c971(+):2399-25931[0m → [32m94f57d02(+):0-55843[0m → [32mb09fd5bb(+):9461-23427[0m → [32m7219f65c(-):0-52178[0m → [32mc607abcd(-):30104-77840[0m → [32mefdd7146(+):16361-24551[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 02:12:08)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,890,898      386,812,414
+1           2,901,791      415,296,720
+2           2,901,874      415,366,592
+3           2,901,842      415,358,536
+4           2,901,882      415,385,364
+5           2,901,842      415,367,876
+6           2,901,850      415,372,934
+7           2,901,849      415,354,361
+8           2,901,903      415,367,432
+9           2,901,866      415,375,413
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 02:26:59)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,864      139,818,956
+1           2,901,847      139,834,138
+
+Final assembly size: 2,901,851 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_1/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_1.fastq"
+	User time (seconds): 6813.37
+	System time (seconds): 83.09
+	Percent of CPU this job got: 626%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:20.85
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1008464
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 53981904
+	Voluntary context switches: 527336
+	Involuntary context switches: 32853
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 554592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.132*1.01] collected minimizers
+[M::mm_idx_gen::0.163*1.37] sorted minimizers
+[M::main::0.209*1.29] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.219*1.28] distinct minimizers: 516362 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/rebaler.fasta
+[M::main] Real time: 0.224 sec; CPU: 0.285 sec; Peak RSS: 0.032 GB
+[M::main::0.050*1.03] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.061*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.068*1.03] distinct minimizers: 516362 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::worker_pipeline::15.809*5.86] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_1/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/LFZip_maxerror_1.fastq
+[M::main] Real time: 15.821 sec; CPU: 92.624 sec; Peak RSS: 1.163 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[02:29:33 - Predict] Processing region(s): contig_1:0-2901851
+[02:29:33 - Predict] Setting tensorflow threads to 8.
+[02:29:33 - Predict] Processing 3 long region(s) with batching.
+[02:29:33 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[02:29:33 - ModelLoad] Building model with cudnn optimization: False
+[02:29:34 - DLoader] Initializing data loader
+[02:29:34 - PWorker] Running inference for 2.9M draft bases.
+[02:29:34 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[02:29:34 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[02:29:34 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901851.
+[02:29:36 - Feature] Processed contig_1:1998000.0-2901850.0 (median depth 81.0)
+[02:29:36 - Sampler] Took 2.07s to make features.
+[02:29:36 - Feature] Processed contig_1:999000.0-1998999.0 (median depth 79.0)
+[02:29:36 - Sampler] Took 2.28s to make features.
+[02:29:36 - Feature] Processed contig_1:0.0-999999.0 (median depth 89.0)
+[02:29:36 - Sampler] Took 2.58s to make features.
+[02:29:45 - PWorker] 18.0% Done (0.5/2.9 Mbases) in 10.9s
+[02:29:45 - PWorker] Samples in cache: 300.
+[02:29:54 - PWorker] Samples in cache: 259.
+[02:30:03 - PWorker] 54.1% Done (1.6/2.9 Mbases) in 28.8s
+[02:30:03 - PWorker] Samples in cache: 159.
+[02:30:12 - PWorker] Samples in cache: 59.
+[02:30:20 - PWorker] 89.9% Done (2.6/2.9 Mbases) in 46.5s
+[02:30:20 - PWorker] Samples in cache: 0.
+[02:30:26 - PWorker] All done, 0 remainder regions.
+[02:30:26 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[02:30:29 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[02:30:29 - Stitch] Stitching regions: ['contig_1:0-']
+[02:30:29 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[02:30:29 - Stitch] Processing contig_1:0-.
+[02:30:33 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_1/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_1.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_1/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_1/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 579.72
+	System time (seconds): 86.40
+	Percent of CPU this job got: 718%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:32.70
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8126680
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 22200721
+	Voluntary context switches: 3270324
+	Involuntary context switches: 944597
+	Swaps: 0
+	File system inputs: 256
+	File system outputs: 777168
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 02:30:33] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 02:30:33] INFO: >>>STAGE: configure
+[2020-10-01 02:30:33] INFO: Configuring run
+[2020-10-01 02:30:34] INFO: Total read length: 242542178
+[2020-10-01 02:30:34] INFO: Input genome size: 2900000
+[2020-10-01 02:30:34] INFO: Estimated coverage: 83
+[2020-10-01 02:30:34] INFO: Reads N50/N90: 24751 / 12117
+[2020-10-01 02:30:34] INFO: Minimum overlap set to 5000
+[2020-10-01 02:30:34] INFO: Selected k-mer size: 15
+[2020-10-01 02:30:34] INFO: >>>STAGE: assembly
+[2020-10-01 02:30:34] INFO: Assembling disjointigs
+[2020-10-01 02:30:34] INFO: Reading sequences
+[2020-10-01 02:30:35] INFO: Generating solid k-mer index
+[2020-10-01 02:30:53] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:30:59] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:31:11] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:32:21] INFO: Extending reads
+[2020-10-01 02:37:52] INFO: Overlap-based coverage: 78
+[2020-10-01 02:37:52] INFO: Median overlap divergence: 0.0740548
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:39:24] INFO: Assembled 1 disjointigs
+[2020-10-01 02:39:24] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:40:10] INFO: >>>STAGE: consensus
+[2020-10-01 02:40:10] INFO: Running Minimap2
+[2020-10-01 02:40:28] INFO: Computing consensus
+[2020-10-01 02:43:06] INFO: Alignment error rate: 0.087351
+[2020-10-01 02:43:06] INFO: >>>STAGE: repeat
+[2020-10-01 02:43:06] INFO: Building and resolving repeat graph
+[2020-10-01 02:43:06] INFO: Parsing disjointigs
+[2020-10-01 02:43:06] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 02:43:32] INFO: Median overlap divergence: 0.0240059
+[2020-10-01 02:43:32] INFO: Parsing reads
+[2020-10-01 02:43:33] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:44:17] INFO: Aligned read sequence: 240236713 / 242542178 (0.990495)
+[2020-10-01 02:44:17] INFO: Median overlap divergence: 0.0200962
+[2020-10-01 02:44:17] INFO: Mean edge coverage: 84
+[2020-10-01 02:44:17] INFO: Simplifying the graph
+[2020-10-01 02:44:17] INFO: >>>STAGE: contigger
+[2020-10-01 02:44:17] INFO: Generating contigs
+[2020-10-01 02:44:17] INFO: Reading sequences
+[2020-10-01 02:44:18] INFO: Generated 1 contigs
+[2020-10-01 02:44:18] INFO: Added 0 scaffold connections
+[2020-10-01 02:44:18] INFO: >>>STAGE: polishing
+[2020-10-01 02:44:18] INFO: Polishing genome (1/1)
+[2020-10-01 02:44:18] INFO: Running minimap2
+[2020-10-01 02:44:34] INFO: Separating alignment into bubbles
+[2020-10-01 02:47:43] INFO: Alignment error rate: 0.050590
+[2020-10-01 02:47:43] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 02:48:07] INFO: >>>STAGE: finalize
+[2020-10-01 02:48:07] INFO: Assembly statistics:
+
+	Total length:	2901777
+	Fragments:	1
+	Fragments N50:	2901777
+	Largest frg:	2901777
+	Scaffolds:	0
+	Mean coverage:	83
+
+[2020-10-01 02:48:07] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_1.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_1/flye/ --threads 8"
+	User time (seconds): 3168.99
+	System time (seconds): 95.06
+	Percent of CPU this job got: 309%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 17:33.90
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 5123096
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 48069459
+	Voluntary context switches: 473455
+	Involuntary context switches: 31169
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 876432
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 02:48:07)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,777
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 02:48:07)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,684 initial alignments
+                                             83.95x depth
+Culling alignments to a non-redundant set... 77 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m666ae403(+):0-11172[0m → [32m94f57d02(-):0-55848[0m → [32m4de5ac13(+):4058-70099[0m → [32mcc4e679d(-):0-25261[0m → [32m3578ef04(-):0-32995[0m → [32md89903a8(-):6925-24385[0m → [32m7bd97669(-):0-23970[0m → [32m636f180a(+):14757-44866[0m → [32m762474ac(-):0-47333[0m → [32ma8a2cd6c(-):9083-37561[0m → [32mc4d31b74(-):0-24527[0m → [32m6b0342d4(-):0-50301[0m → [32m6b519a58(+):78-28576[0m → [32me6542bf2(+):0-51705[0m → [32m1a15af10(-):443-54100[0m → [32m200ebd4f(+):15251-45748[0m → [32m8866033f(+):0-41867[0m → [32m0bd44360(-):0-37044[0m → [32ma0a7d0d2(+):7061-69430[0m → [32m5393895e(+):41344-64368[0m → [32m710c38b1(-):0-28507[0m → [32m1b360f0e(-):8209-37570[0m → [32m853fedf4(+):13091-42923[0m → [32m64345a0f(-):0-52067[0m → [32mcd53108f(+):0-21438[0m → [32m912f8103(+):0-48092[0m → [32m4ca87f61(-):18184-61387[0m → [32mae9acc84(+):0-46671[0m → [32m13756882(-):25597-47087[0m → [32m5805439d(+):3270-7219[0m → [32m386e7839(+):0-52436[0m → [32m3bf2382a(+):8798-95948[0m → [32m2c23d452(+):15399-38486[0m → [32mdb443701(-):0-48753[0m → [32m85040ffb(-):16824-47643[0m → [32ma36f4dae(+):30669-31562[0m → [32me252c066(-):0-47443[0m → [32m74ffae5a(-):9330-81789[0m → [32mce019d9c(+):0-32134[0m → [32mc1832296(-):1433-55080[0m → [32m4083ffd1(-):0-37457[0m → [32mdb0bcabf(+):0-32865[0m → [32m2c7d7b5f(+):2852-43399[0m → [32mec870fa2(-):0-56648[0m → [32m9c10ed16(+):6420-61492[0m → [32m48185330(+):37623-42051[0m → [32mb90b3021(+):0-35870[0m → [32m4354233f(+):0-44631[0m → [32mb1f65121(+):7544-41561[0m → [32m361e58ed(+):0-73847[0m → [32mead70ea0(-):0-19711[0m → [32m98d1cb74(-):0-39880[0m → [32mc3197f35(+):8914-49711[0m → [32m284651c8(-):16388-38800[0m → [32mafdecabd(-):0-43749[0m → [32me5f0f7ad(-):7684-42586[0m → [32m75b2df9e(+):0-24018[0m → [32m6405383d(+):3112-70279[0m → [32m691fdefa(-):6632-60491[0m → [32mb488f767(-):52640-92434[0m → [32m032fb442(+):0-35582[0m → [32m803e9197(+):25948-26581[0m → [32m1ee40d58(+):0-44603[0m → [32m0905df66(+):0-39696[0m → [32me99b1c45(-):29796-68880[0m → [32mc6a770c8(-):0-30202[0m → [32m6b7a94f5(+):4440-30191[0m → [32mfee50e7d(-):0-55459[0m → [32m7c65f599(-):0-49393[0m → [32mb02e687c(+):21166-34523[0m → [32m30eb4700(-):295-13825[0m → [32mcfaa0889(-):0-71130[0m → [32m3f442da9(+):17892-48581[0m → [32me3e67c0c(-):1797-23372[0m → [32mc607abcd(+):0-47713[0m → [32m7219f65c(+):0-52154[0m → [32mfd5ace49(+):21731-24600[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 02:49:39)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,890,678      385,844,450
+1           2,901,741      415,423,667
+2           2,901,879      415,479,124
+3           2,901,878      415,484,599
+4           2,901,888      415,473,071
+5           2,901,852      415,478,110
+6           2,901,892      415,477,230
+7           2,901,864      415,479,334
+8           2,901,886      415,495,137
+9           2,901,892      415,497,490
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 03:04:25)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,867      139,822,532
+1           2,901,868      139,838,604
+
+Final assembly size: 2,901,870 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_1/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_1.fastq"
+	User time (seconds): 6779.59
+	System time (seconds): 81.80
+	Percent of CPU this job got: 622%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:22.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 967044
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 54171631
+	Voluntary context switches: 502183
+	Involuntary context switches: 33820
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 554664
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.132*1.01] collected minimizers
+[M::mm_idx_gen::0.161*1.36] sorted minimizers
+[M::main::0.197*1.30] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.205*1.28] distinct minimizers: 516370 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/rebaler.fasta
+[M::main] Real time: 0.211 sec; CPU: 0.269 sec; Peak RSS: 0.032 GB
+[M::main::0.051*1.04] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.061*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.069*1.03] distinct minimizers: 516370 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::worker_pipeline::15.922*5.88] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_1/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/SZ_maxerror_1.fastq
+[M::main] Real time: 15.935 sec; CPU: 93.562 sec; Peak RSS: 1.063 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[03:07:02 - Predict] Processing region(s): contig_1:0-2901870
+[03:07:02 - Predict] Setting tensorflow threads to 8.
+[03:07:02 - Predict] Processing 3 long region(s) with batching.
+[03:07:02 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[03:07:02 - ModelLoad] Building model with cudnn optimization: False
+[03:07:03 - DLoader] Initializing data loader
+[03:07:03 - PWorker] Running inference for 2.9M draft bases.
+[03:07:03 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[03:07:03 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[03:07:03 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901870.
+[03:07:05 - Feature] Processed contig_1:1998000.0-2901869.0 (median depth 87.0)
+[03:07:05 - Sampler] Took 2.21s to make features.
+[03:07:05 - Feature] Processed contig_1:0.0-999999.1 (median depth 81.0)
+[03:07:05 - Sampler] Took 2.38s to make features.
+[03:07:06 - Feature] Processed contig_1:999000.0-1998999.0 (median depth 83.0)
+[03:07:06 - Sampler] Took 2.46s to make features.
+[03:07:14 - PWorker] 17.5% Done (0.5/2.9 Mbases) in 11.1s
+[03:07:14 - PWorker] Samples in cache: 300.
+[03:07:23 - PWorker] Samples in cache: 259.
+[03:07:32 - PWorker] 53.4% Done (1.6/2.9 Mbases) in 29.0s
+[03:07:32 - PWorker] Samples in cache: 159.
+[03:07:41 - PWorker] Samples in cache: 59.
+[03:07:50 - PWorker] 89.9% Done (2.6/2.9 Mbases) in 46.5s
+[03:07:50 - PWorker] Samples in cache: 0.
+[03:07:56 - PWorker] All done, 0 remainder regions.
+[03:07:56 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[03:07:58 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[03:07:58 - Stitch] Stitching regions: ['contig_1:0-']
+[03:07:58 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[03:07:58 - Stitch] Processing contig_1:0-.
+[03:08:02 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_1/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_1.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_1/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_1/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 584.02
+	System time (seconds): 86.38
+	Percent of CPU this job got: 721%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:32.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 8822116
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 21784403
+	Voluntary context switches: 3321058
+	Involuntary context switches: 982022
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 776912
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 03:08:03] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 03:08:03] INFO: >>>STAGE: configure
+[2020-10-01 03:08:03] INFO: Configuring run
+[2020-10-01 03:08:04] INFO: Total read length: 242329990
+[2020-10-01 03:08:04] INFO: Input genome size: 2900000
+[2020-10-01 03:08:04] INFO: Estimated coverage: 83
+[2020-10-01 03:08:04] INFO: Reads N50/N90: 24728 / 12100
+[2020-10-01 03:08:04] INFO: Minimum overlap set to 5000
+[2020-10-01 03:08:04] INFO: Selected k-mer size: 15
+[2020-10-01 03:08:04] INFO: >>>STAGE: assembly
+[2020-10-01 03:08:04] INFO: Assembling disjointigs
+[2020-10-01 03:08:04] INFO: Reading sequences
+[2020-10-01 03:08:05] INFO: Generating solid k-mer index
+[2020-10-01 03:08:23] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:08:29] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:08:41] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:09:45] INFO: Extending reads
+[2020-10-01 03:15:04] INFO: Overlap-based coverage: 77
+[2020-10-01 03:15:04] INFO: Median overlap divergence: 0.0854214
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:16:16] INFO: Assembled 1 disjointigs
+[2020-10-01 03:16:17] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:17:03] INFO: >>>STAGE: consensus
+[2020-10-01 03:17:04] INFO: Running Minimap2
+[2020-10-01 03:17:20] INFO: Computing consensus
+[2020-10-01 03:19:43] INFO: Alignment error rate: 0.094445
+[2020-10-01 03:19:43] INFO: >>>STAGE: repeat
+[2020-10-01 03:19:43] INFO: Building and resolving repeat graph
+[2020-10-01 03:19:43] INFO: Parsing disjointigs
+[2020-10-01 03:19:43] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 03:20:09] INFO: Median overlap divergence: 0.0245601
+[2020-10-01 03:20:09] INFO: Parsing reads
+[2020-10-01 03:20:10] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:20:54] INFO: Aligned read sequence: 240011304 / 242329990 (0.990432)
+[2020-10-01 03:20:54] INFO: Median overlap divergence: 0.0220751
+[2020-10-01 03:20:54] INFO: Mean edge coverage: 84
+[2020-10-01 03:20:54] INFO: Simplifying the graph
+[2020-10-01 03:20:55] INFO: >>>STAGE: contigger
+[2020-10-01 03:20:55] INFO: Generating contigs
+[2020-10-01 03:20:55] INFO: Reading sequences
+[2020-10-01 03:20:56] INFO: Generated 1 contigs
+[2020-10-01 03:20:56] INFO: Added 0 scaffold connections
+[2020-10-01 03:20:56] INFO: >>>STAGE: polishing
+[2020-10-01 03:20:56] INFO: Polishing genome (1/1)
+[2020-10-01 03:20:56] INFO: Running minimap2
+[2020-10-01 03:21:11] INFO: Separating alignment into bubbles
+[2020-10-01 03:24:26] INFO: Alignment error rate: 0.054685
+[2020-10-01 03:24:26] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:24:50] INFO: >>>STAGE: finalize
+[2020-10-01 03:24:50] INFO: Assembly statistics:
+
+	Total length:	2901729
+	Fragments:	1
+	Fragments N50:	2901729
+	Largest frg:	2901729
+	Scaffolds:	0
+	Mean coverage:	82
+
+[2020-10-01 03:24:50] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_5.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_5/flye/ --threads 8"
+	User time (seconds): 2940.30
+	System time (seconds): 75.32
+	Percent of CPU this job got: 299%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:47.82
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4493832
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 38366318
+	Voluntary context switches: 399956
+	Involuntary context switches: 30073
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 881704
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 03:24:50)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,729
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 03:24:50)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,673 initial alignments
+                                             83.92x depth
+Culling alignments to a non-redundant set... 83 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m1ce48bc2(+):0-32476[0m → [32m7865f07d(+):30787-38718[0m → [32m2c7d7b5f(-):4209-46049[0m → [32mdb0bcabf(-):0-32826[0m → [32m5e0bbd96(+):21313-32230[0m → [32m1cce031c(-):9697-44825[0m → [32ma8411e27(-):15680-50026[0m → [32mf23746bf(+):0-12322[0m → [32m223c5106(+):0-50754[0m → [32m49f4e820(-):865-36402[0m → [32m8b091456(+):28073-39088[0m → [32mb755029f(+):0-51698[0m → [32ma36f4dae(-):17429-19501[0m → [32m85040ffb(+):0-30789[0m → [32mdb443701(+):0-48743[0m → [32m2c23d452(-):24702-58991[0m → [32m80838b7f(-):0-50330[0m → [32m64e9f112(-):3353-50576[0m → [32m1298caa3(-):13848-48605[0m → [32m13756882(+):0-14684[0m → [32m7aea5967(-):0-33563[0m → [32m39eab16b(-):0-37317[0m → [32m0376bc6e(-):5660-31562[0m → [32m912f8103(-):0-48125[0m → [32mcd53108f(-):15051-36464[0m → [32m64345a0f(+):13719-65760[0m → [32maf92aefe(-):20376-36745[0m → [32mbcf11d35(-):0-17291[0m → [32m94ac5cda(-):0-29097[0m → [32m53b41a1e(+):14935-56683[0m → [32m92b49655(+):0-6429[0m → [32ma0a7d0d2(-):0-62335[0m → [32m0bd44360(+):0-37001[0m → [32m3190e5f8(+):7918-71503[0m → [32m26969d44(-):0-28491[0m → [32m6312a848(-):9025-21989[0m → [32m265a1142(+):0-78981[0m → [32m07c3693f(-):23735-34737[0m → [32m35dd6e2d(-):0-32372[0m → [32m973a6e6f(+):1270-15246[0m → [32mc4d31b74(+):0-39537[0m → [32ma8a2cd6c(+):15090-43549[0m → [32m762474ac(+):0-47359[0m → [32m99e2e689(+):33090-50440[0m → [32m7d90457f(-):9609-28675[0m → [32m9bd29cad(-):0-24944[0m → [32m650c61fa(+):3935-39910[0m → [32m1f2f43aa(-):7405-41522[0m → [32m8f7fc283(-):0-40839[0m → [32m21def7c2(-):6123-29727[0m → [32m94f57d02(+):0-55809[0m → [32mb09fd5bb(+):9461-42823[0m → [32mc0c2380c(+):20494-42110[0m → [32mc607abcd(-):18935-72788[0m → [32mc98e9e0a(+):0-24322[0m → [32mb28a1229(-):9038-40624[0m → [32m1914c8bf(+):0-26933[0m → [32m5c8edf6a(+):17952-52772[0m → [32m1459b8ed(+):0-50274[0m → [32m7c65f599(+):12665-49397[0m → [32mfee50e7d(+):1702-57142[0m → [32m6b7a94f5(-):21344-37981[0m → [32m404af5d9(+):0-31438[0m → [32me99b1c45(+):0-46834[0m → [32m0905df66(-):0-39701[0m → [32m8b530503(-):2259-48324[0m → [32m6a588308(+):1188-8413[0m → [32mec8f4df5(-):0-45888[0m → [32maa0c3a0b(-):0-28688[0m → [32m691fdefa(+):7102-53822[0m → [32m6405383d(-):0-70214[0m → [32m46a00371(-):55480-63647[0m → [32m69b2b5ce(-):0-29376[0m → [32me5f0f7ad(+):26509-44641[0m → [32mafdecabd(+):0-43705[0m → [32m42195d17(+):18093-45462[0m → [32mc3197f35(-):5072-40792[0m → [32m98d1cb74(+):0-39898[0m → [32mbf25708c(-):1682-70975[0m → [32m361e58ed(-):55313-79568[0m → [32m99f279ad(-):3245-73502[0m → [32m28a0458d(+):12144-81081[0m → [32m403d93b7(+):0-49124[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 03:26:19)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,889,319      378,381,825
+1           2,901,738      409,929,089
+2           2,901,860      410,015,309
+3           2,901,834      410,017,996
+4           2,901,877      410,015,879
+5           2,901,872      410,007,091
+6           2,901,857      410,023,474
+7           2,901,865      410,011,487
+8           2,901,843      410,007,555
+9           2,901,857      410,006,533
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 03:41:27)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,819      139,804,384
+1           2,901,826      139,822,592
+
+Final assembly size: 2,901,827 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_5/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_5.fastq"
+	User time (seconds): 6941.51
+	System time (seconds): 80.29
+	Percent of CPU this job got: 625%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:42.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1029348
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 53907688
+	Voluntary context switches: 517671
+	Involuntary context switches: 38530
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 554664
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.134*1.01] collected minimizers
+[M::mm_idx_gen::0.162*1.34] sorted minimizers
+[M::main::0.204*1.27] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.212*1.26] distinct minimizers: 516379 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/rebaler.fasta
+[M::main] Real time: 0.217 sec; CPU: 0.272 sec; Peak RSS: 0.032 GB
+[M::main::0.050*1.03] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.060*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.068*1.03] distinct minimizers: 516379 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::worker_pipeline::15.936*5.87] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_5/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/LFZip_maxerror_5.fastq
+[M::main] Real time: 15.948 sec; CPU: 93.522 sec; Peak RSS: 1.116 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[03:44:06 - Predict] Processing region(s): contig_1:0-2901827
+[03:44:06 - Predict] Setting tensorflow threads to 8.
+[03:44:06 - Predict] Processing 3 long region(s) with batching.
+[03:44:06 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[03:44:06 - ModelLoad] Building model with cudnn optimization: False
+[03:44:07 - DLoader] Initializing data loader
+[03:44:07 - PWorker] Running inference for 2.9M draft bases.
+[03:44:07 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[03:44:07 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[03:44:07 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901827.
+[03:44:09 - Feature] Processed contig_1:0.0-999999.1 (median depth 78.0)
+[03:44:09 - Sampler] Took 2.16s to make features.
+[03:44:09 - Feature] Processed contig_1:1998000.0-2901826.0 (median depth 90.0)
+[03:44:09 - Sampler] Took 2.29s to make features.
+[03:44:09 - Feature] Processed contig_1:999000.0-1998999.0 (median depth 84.0)
+[03:44:09 - Sampler] Took 2.48s to make features.
+[03:44:18 - PWorker] 18.0% Done (0.5/2.9 Mbases) in 10.9s
+[03:44:18 - PWorker] Samples in cache: 300.
+[03:44:27 - PWorker] Samples in cache: 269.
+[03:44:36 - PWorker] 53.2% Done (1.5/2.9 Mbases) in 29.2s
+[03:44:36 - PWorker] Samples in cache: 169.
+[03:44:45 - PWorker] Samples in cache: 69.
+[03:44:53 - PWorker] 88.0% Done (2.6/2.9 Mbases) in 46.7s
+[03:44:54 - PWorker] Samples in cache: 0.
+[03:45:01 - PWorker] All done, 0 remainder regions.
+[03:45:01 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[03:45:03 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[03:45:03 - Stitch] Stitching regions: ['contig_1:0-']
+[03:45:03 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[03:45:03 - Stitch] Processing contig_1:0-.
+[03:45:07 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_5/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_5.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_5/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_5/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 589.28
+	System time (seconds): 86.74
+	Percent of CPU this job got: 715%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:34.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7658068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 22392673
+	Voluntary context switches: 3360176
+	Involuntary context switches: 572825
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 784480
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 03:45:07] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 03:45:07] INFO: >>>STAGE: configure
+[2020-10-01 03:45:07] INFO: Configuring run
+[2020-10-01 03:45:09] INFO: Total read length: 242333103
+[2020-10-01 03:45:09] INFO: Input genome size: 2900000
+[2020-10-01 03:45:09] INFO: Estimated coverage: 83
+[2020-10-01 03:45:09] INFO: Reads N50/N90: 24744 / 12109
+[2020-10-01 03:45:09] INFO: Minimum overlap set to 5000
+[2020-10-01 03:45:09] INFO: Selected k-mer size: 15
+[2020-10-01 03:45:09] INFO: >>>STAGE: assembly
+[2020-10-01 03:45:09] INFO: Assembling disjointigs
+[2020-10-01 03:45:09] INFO: Reading sequences
+[2020-10-01 03:45:10] INFO: Generating solid k-mer index
+[2020-10-01 03:45:28] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:45:33] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:45:45] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:46:50] INFO: Extending reads
+[2020-10-01 03:51:59] INFO: Overlap-based coverage: 76
+[2020-10-01 03:51:59] INFO: Median overlap divergence: 0.082147
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:53:03] INFO: Assembled 1 disjointigs
+[2020-10-01 03:53:03] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:53:49] INFO: >>>STAGE: consensus
+[2020-10-01 03:53:49] INFO: Running Minimap2
+[2020-10-01 03:54:06] INFO: Computing consensus
+[2020-10-01 03:56:32] INFO: Alignment error rate: 0.093469
+[2020-10-01 03:56:32] INFO: >>>STAGE: repeat
+[2020-10-01 03:56:32] INFO: Building and resolving repeat graph
+[2020-10-01 03:56:32] INFO: Parsing disjointigs
+[2020-10-01 03:56:32] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 03:56:58] INFO: Median overlap divergence: 0.0236394
+[2020-10-01 03:56:58] INFO: Parsing reads
+[2020-10-01 03:56:59] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 03:57:43] INFO: Aligned read sequence: 240004163 / 242333103 (0.990389)
+[2020-10-01 03:57:43] INFO: Median overlap divergence: 0.0221602
+[2020-10-01 03:57:43] INFO: Mean edge coverage: 84
+[2020-10-01 03:57:43] INFO: Simplifying the graph
+[2020-10-01 03:57:43] INFO: >>>STAGE: contigger
+[2020-10-01 03:57:43] INFO: Generating contigs
+[2020-10-01 03:57:43] INFO: Reading sequences
+[2020-10-01 03:57:44] INFO: Generated 1 contigs
+[2020-10-01 03:57:44] INFO: Added 0 scaffold connections
+[2020-10-01 03:57:44] INFO: >>>STAGE: polishing
+[2020-10-01 03:57:44] INFO: Polishing genome (1/1)
+[2020-10-01 03:57:44] INFO: Running minimap2
+[2020-10-01 03:58:00] INFO: Separating alignment into bubbles
+[2020-10-01 04:01:16] INFO: Alignment error rate: 0.054926
+[2020-10-01 04:01:16] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:01:40] INFO: >>>STAGE: finalize
+[2020-10-01 04:01:40] INFO: Assembly statistics:
+
+	Total length:	2901729
+	Fragments:	1
+	Fragments N50:	2901729
+	Largest frg:	2901729
+	Scaffolds:	0
+	Mean coverage:	81
+
+[2020-10-01 04:01:40] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_5.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_5/flye/ --threads 8"
+	User time (seconds): 2861.00
+	System time (seconds): 78.02
+	Percent of CPU this job got: 296%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:32.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4529812
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 39495255
+	Voluntary context switches: 401835
+	Involuntary context switches: 15208
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 881304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 04:01:40)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,729
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 04:01:40)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,688 initial alignments
+                                             83.92x depth
+Culling alignments to a non-redundant set... 81 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m1ce48bc2(+):0-32439[0m → [32m5e04e900(-):4551-9521[0m → [32m7893d366(-):0-37751[0m → [32mecf56bfb(-):0-40994[0m → [32mf94b1d29(-):27824-34937[0m → [32m1cce031c(-):6832-44821[0m → [32mc1832296(+):21888-66905[0m → [32mce019d9c(-):0-32113[0m → [32m223c5106(+):30251-44919[0m → [32me74acad1(+):0-38850[0m → [32m8b091456(+):25573-45139[0m → [32mf00be378(-):0-28842[0m → [32mbcd597b9(+):0-49599[0m → [32mdb443701(+):0-48714[0m → [32mbd10cacf(+):5827-22284[0m → [32m74ceafd5(-):0-17938[0m → [32m80838b7f(-):0-50373[0m → [32m64e9f112(-):3348-28982[0m → [32m386e7839(-):0-22509[0m → [32mc0d8ad0b(-):0-45945[0m → [32m13756882(+):12070-17095[0m → [32me4fac0f8(-):0-43138[0m → [32m4ca87f61(+):7772-58722[0m → [32m912f8103(-):0-48022[0m → [32mcd53108f(-):15045-36503[0m → [32m24c8589e(+):17620-71109[0m → [32m4d2990fe(-):18-44744[0m → [32m390c3512(+):0-64700[0m → [32ma0a7d0d2(-):0-62314[0m → [32m0bd44360(+):0-37038[0m → [32m3f8303d8(+):6263-28424[0m → [32m5ca963b4(+):0-61927[0m → [32m1a15af10(+):11924-32601[0m → [32m265a1142(+):0-79026[0m → [32me7469cf7(-):20706-42754[0m → [32m6b0342d4(+):0-50301[0m → [32mc4d31b74(+):15015-39546[0m → [32ma8a2cd6c(+):15054-43507[0m → [32m762474ac(+):0-47364[0m → [32m99e2e689(+):33070-40794[0m → [32m7d90457f(-):0-22388[0m → [32m7bd97669(+):0-23987[0m → [32mb2d8a0ba(+):1199-18702[0m → [32m3578ef04(+):0-32990[0m → [32mb771e28c(+):14822-48390[0m → [32m87272fb6(-):12275-40320[0m → [32m21def7c2(-):0-29738[0m → [32m94f57d02(+):0-55830[0m → [32mb8ba1e13(+):4635-40673[0m → [32mc607abcd(-):0-54300[0m → [32me3e67c0c(+):0-45077[0m → [32m59bafb69(+):0-29050[0m → [32m1914c8bf(+):0-26927[0m → [32m496f2269(+):16222-31726[0m → [32mb01f9ff6(+):0-56852[0m → [32m7c65f599(+):0-49381[0m → [32mfee50e7d(+):1700-57166[0m → [32m7f2d3d8f(+):7931-24578[0m → [32m404af5d9(+):0-31465[0m → [32me99b1c45(+):0-76576[0m → [32md477e490(-):7797-33955[0m → [32me385a631(-):0-29125[0m → [32m032fb442(-):0-35574[0m → [32m74aa7879(+):14235-28568[0m → [32m5b1b75db(+):0-39987[0m → [32m691fdefa(+):14368-53817[0m → [32m6405383d(-):0-67156[0m → [32m75b2df9e(-):0-24045[0m → [32me5f0f7ad(+):9775-44654[0m → [32mafdecabd(+):0-43728[0m → [32mdcdc4503(+):17639-21944[0m → [32mbc295a31(-):0-30608[0m → [32mc3197f35(-):12553-40768[0m → [32m98d1cb74(+):0-39853[0m → [32m3c5ba9e6(-):29815-43757[0m → [32m361e58ed(-):0-79571[0m → [32m99f279ad(-):3256-39849[0m → [32mc91f3eef(+):0-35099[0m → [32maaa74d14(-):0-40592[0m → [32m48185330(-):13981-58046[0m → [32m403d93b7(+):17139-49109[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 04:03:08)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,889,132      378,230,112
+1           2,901,687      409,929,099
+2           2,901,822      410,039,234
+3           2,901,851      410,034,527
+4           2,901,868      410,024,763
+5           2,901,834      410,027,211
+6           2,901,843      410,037,011
+7           2,901,808      410,035,664
+8           2,901,849      410,040,048
+9           2,901,858      410,027,186
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 04:18:12)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,826      139,809,110
+1           2,901,828      139,825,674
+
+Final assembly size: 2,901,829 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_5/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_5.fastq"
+	User time (seconds): 6924.36
+	System time (seconds): 81.24
+	Percent of CPU this job got: 630%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 18:31.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1035660
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 54978201
+	Voluntary context switches: 503533
+	Involuntary context switches: 38942
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 554752
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.101*1.02] collected minimizers
+[M::mm_idx_gen::0.125*1.39] sorted minimizers
+[M::main::0.166*1.29] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.174*1.28] distinct minimizers: 516371 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/rebaler.fasta
+[M::main] Real time: 0.178 sec; CPU: 0.227 sec; Peak RSS: 0.031 GB
+[M::main::0.041*1.04] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.049*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.054*1.03] distinct minimizers: 516371 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::worker_pipeline::15.749*5.87] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_5/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/SZ_maxerror_5.fastq
+[M::main] Real time: 15.766 sec; CPU: 92.497 sec; Peak RSS: 1.173 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[04:20:43 - Predict] Processing region(s): contig_1:0-2901829
+[04:20:43 - Predict] Setting tensorflow threads to 8.
+[04:20:43 - Predict] Processing 3 long region(s) with batching.
+[04:20:43 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[04:20:43 - ModelLoad] Building model with cudnn optimization: False
+[04:20:44 - DLoader] Initializing data loader
+[04:20:44 - PWorker] Running inference for 2.9M draft bases.
+[04:20:44 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[04:20:44 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[04:20:44 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901829.
+[04:20:46 - Feature] Processed contig_1:0.0-999999.0 (median depth 78.0)
+[04:20:46 - Sampler] Took 2.21s to make features.
+[04:20:47 - Feature] Processed contig_1:999000.0-1998999.2 (median depth 84.0)
+[04:20:47 - Sampler] Took 2.37s to make features.
+[04:20:47 - Feature] Processed contig_1:1998000.0-2901828.0 (median depth 90.0)
+[04:20:47 - Sampler] Took 2.49s to make features.
+[04:20:55 - PWorker] 18.0% Done (0.5/2.9 Mbases) in 11.2s
+[04:20:55 - PWorker] Samples in cache: 300.
+[04:21:05 - PWorker] Samples in cache: 269.
+[04:21:14 - PWorker] 53.5% Done (1.6/2.9 Mbases) in 29.9s
+[04:21:14 - PWorker] Samples in cache: 169.
+[04:21:23 - PWorker] Samples in cache: 69.
+[04:21:32 - PWorker] 88.3% Done (2.6/2.9 Mbases) in 48.2s
+[04:21:32 - PWorker] Samples in cache: 0.
+[04:21:40 - PWorker] All done, 0 remainder regions.
+[04:21:40 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[04:21:42 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[04:21:42 - Stitch] Stitching regions: ['contig_1:0-']
+[04:21:42 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[04:21:42 - Stitch] Processing contig_1:0-.
+[04:21:46 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_5/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_5.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_5/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_5/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 593.48
+	System time (seconds): 94.46
+	Percent of CPU this job got: 726%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:34.68
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7341372
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 23035607
+	Voluntary context switches: 3317949
+	Involuntary context switches: 1205786
+	Swaps: 0
+	File system inputs: 24
+	File system outputs: 784456
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 04:21:46] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 04:21:46] INFO: >>>STAGE: configure
+[2020-10-01 04:21:46] INFO: Configuring run
+[2020-10-01 04:21:47] INFO: Total read length: 241794989
+[2020-10-01 04:21:47] INFO: Input genome size: 2900000
+[2020-10-01 04:21:47] INFO: Estimated coverage: 83
+[2020-10-01 04:21:47] INFO: Reads N50/N90: 24694 / 12079
+[2020-10-01 04:21:47] INFO: Minimum overlap set to 5000
+[2020-10-01 04:21:47] INFO: Selected k-mer size: 15
+[2020-10-01 04:21:47] INFO: >>>STAGE: assembly
+[2020-10-01 04:21:47] INFO: Assembling disjointigs
+[2020-10-01 04:21:47] INFO: Reading sequences
+[2020-10-01 04:21:48] INFO: Generating solid k-mer index
+[2020-10-01 04:22:06] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:22:11] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:22:22] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:23:22] INFO: Extending reads
+[2020-10-01 04:27:38] INFO: Overlap-based coverage: 76
+[2020-10-01 04:27:38] INFO: Median overlap divergence: 0.100955
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:28:25] INFO: Assembled 1 disjointigs
+[2020-10-01 04:28:25] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:29:13] INFO: >>>STAGE: consensus
+[2020-10-01 04:29:13] INFO: Running Minimap2
+[2020-10-01 04:29:30] INFO: Computing consensus
+[2020-10-01 04:31:43] INFO: Alignment error rate: 0.110795
+[2020-10-01 04:31:43] INFO: >>>STAGE: repeat
+[2020-10-01 04:31:43] INFO: Building and resolving repeat graph
+[2020-10-01 04:31:43] INFO: Parsing disjointigs
+[2020-10-01 04:31:43] INFO: Building repeat graph
+50% 100% 
+[2020-10-01 04:32:06] INFO: Median overlap divergence: 0.0256457
+[2020-10-01 04:32:06] INFO: Parsing reads
+[2020-10-01 04:32:07] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:32:48] INFO: Aligned read sequence: 239394313 / 241794989 (0.990071)
+[2020-10-01 04:32:48] INFO: Median overlap divergence: 0.0285447
+[2020-10-01 04:32:49] INFO: Mean edge coverage: 84
+[2020-10-01 04:32:49] INFO: Simplifying the graph
+[2020-10-01 04:32:49] INFO: >>>STAGE: contigger
+[2020-10-01 04:32:49] INFO: Generating contigs
+[2020-10-01 04:32:49] INFO: Reading sequences
+[2020-10-01 04:32:50] INFO: Generated 1 contigs
+[2020-10-01 04:32:50] INFO: Added 0 scaffold connections
+[2020-10-01 04:32:50] INFO: >>>STAGE: polishing
+[2020-10-01 04:32:50] INFO: Polishing genome (1/1)
+[2020-10-01 04:32:50] INFO: Running minimap2
+[2020-10-01 04:33:05] INFO: Separating alignment into bubbles
+[2020-10-01 04:36:06] INFO: Alignment error rate: 0.065908
+[2020-10-01 04:36:06] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:36:30] INFO: >>>STAGE: finalize
+[2020-10-01 04:36:30] INFO: Assembly statistics:
+
+	Total length:	2901445
+	Fragments:	1
+	Fragments N50:	2901445
+	Largest frg:	2901445
+	Scaffolds:	0
+	Mean coverage:	83
+
+[2020-10-01 04:36:30] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_10.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_10/flye/ --threads 8"
+	User time (seconds): 2608.96
+	System time (seconds): 74.77
+	Percent of CPU this job got: 303%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:44.49
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4470688
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 41046096
+	Voluntary context switches: 420176
+	Involuntary context switches: 14052
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 894304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 04:36:30)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,445
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 04:36:31)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,669 initial alignments
+                                             83.93x depth
+Culling alignments to a non-redundant set... 81 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m94fda2a2(+):0-11134[0m → [32m94f57d02(-):0-55757[0m → [32m25dbeb72(-):27466-51046[0m → [32m8f7fc283(+):0-40805[0m → [32m1f2f43aa(+):4044-38122[0m → [32m650c61fa(-):0-26417[0m → [32m4f67320c(-):0-46297[0m → [32m7d90457f(+):16095-27752[0m → [32md7660141(-):0-12804[0m → [32m762474ac(-):0-47322[0m → [32mc14b31bd(-):8548-36912[0m → [32mc4d31b74(-):0-39510[0m → [32mab2795b1(-):10806-59578[0m → [32m82f8cb7a(-):5902-30181[0m → [32mb3a5c2e3(-):0-56849[0m → [32m1a15af10(-):15129-53926[0m → [32m200ebd4f(+):15274-52475[0m → [32m4caa8e3a(+):246-60885[0m → [32me2a9c5db(-):15853-48410[0m → [32m92b49655(-):0-47229[0m → [32m8d0adef1(-):24530-28801[0m → [32m058301ec(-):0-33098[0m → [32m0d835050(+):8081-68470[0m → [32m11cc7e05(+):44716-49984[0m → [32m24c8589e(-):0-44494[0m → [32m832b3123(+):0-30387[0m → [32m912f8103(+):0-47974[0m → [32m0376bc6e(+):21849-45458[0m → [32m088092c8(+):0-40900[0m → [32m7aea5967(+):2119-34114[0m → [32ma5eb8b3a(+):26756-45295[0m → [32m386e7839(+):0-34748[0m → [32m599b0946(+):0-43202[0m → [32m80838b7f(+):0-50294[0m → [32m9ff79619(-):20695-32682[0m → [32mbd10cacf(-):5193-17700[0m → [32m3fa42128(+):0-46462[0m → [32m817c977c(+):27248-39285[0m → [32mbcd597b9(-):11054-52982[0m → [32m778abc8f(+):0-30898[0m → [32m8b091456(-):20786-45982[0m → [32me74acad1(-):0-38785[0m → [32mf4324610(+):1951-16609[0m → [32mce019d9c(+):0-32070[0m → [32mc1832296(-):1437-46362[0m → [32m1cce031c(+):0-37951[0m → [32mf94b1d29(+):0-34939[0m → [32mecf56bfb(+):27779-40937[0m → [32m7893d366(+):5637-43347[0m → [32m278a43fc(+):2603-55739[0m → [32mf3b5d113(+):0-32952[0m → [32m9e59ea69(+):13094-40433[0m → [32maaa74d14(+):0-40555[0m → [32m4354233f(+):6740-44581[0m → [32mb1f65121(+):7529-41475[0m → [32m361e58ed(+):0-79522[0m → [32mabc735f0(+):36503-65645[0m → [32mb2c3702e(-):8071-39806[0m → [32mb103e476(-):0-45214[0m → [32m284651c8(-):27726-38635[0m → [32mafdecabd(-):0-43719[0m → [32me5f0f7ad(-):7652-52215[0m → [32m62878846(-):13162-24314[0m → [32m6405383d(+):0-70115[0m → [32m5e0214e6(+):30606-45950[0m → [32mb488f767(-):14104-75612[0m → [32m74aa7879(-):0-30642[0m → [32m803e9197(+):4763-25119[0m → [32m8b530503(+):0-46027[0m → [32m0905df66(+):0-10029[0m → [32me99b1c45(-):0-76501[0m → [32m404af5d9(-):11934-43303[0m → [32m6b7a94f5(+):13524-49816[0m → [32m8f6010c8(-):0-18873[0m → [32m4b38b487(-):0-53491[0m → [32m1459b8ed(-):0-50283[0m → [32mcfaa0889(-):10730-68364[0m → [32md906ae4c(+):0-26492[0m → [32mdeb01e2f(-):1142-30270[0m → [32mc607abcd(+):714-72570[0m → [32mb8ba1e13(-):0-29894[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 04:37:56)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,885,986      352,314,460
+1           2,901,446      393,041,102
+2           2,901,652      393,168,963
+3           2,901,648      393,178,524
+4           2,901,657      393,199,616
+5           2,901,714      393,188,172
+6           2,901,667      393,191,217
+7           2,901,657      393,178,106
+8           2,901,660      393,189,633
+9           2,901,681      393,181,698
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 04:54:09)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,671      139,813,662
+1           2,901,633      139,835,630
+
+Final assembly size: 2,901,642 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_10/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_10.fastq"
+	User time (seconds): 7396.31
+	System time (seconds): 75.21
+	Percent of CPU this job got: 633%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:38.74
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1228456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 49584718
+	Voluntary context switches: 501995
+	Involuntary context switches: 20351
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 554688
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.102*1.02] collected minimizers
+[M::mm_idx_gen::0.124*1.37] sorted minimizers
+[M::main::0.166*1.28] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.174*1.27] distinct minimizers: 516334 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/rebaler.fasta
+[M::main] Real time: 0.178 sec; CPU: 0.224 sec; Peak RSS: 0.032 GB
+[M::main::0.048*1.03] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.058*1.02] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.066*1.02] distinct minimizers: 516334 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.343
+[M::worker_pipeline::16.023*5.82] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/LFZip_maxerror_10/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/LFZip_maxerror_10.fastq
+[M::main] Real time: 16.043 sec; CPU: 93.273 sec; Peak RSS: 1.331 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[04:56:42 - Predict] Processing region(s): contig_1:0-2901642
+[04:56:42 - Predict] Setting tensorflow threads to 8.
+[04:56:42 - Predict] Processing 3 long region(s) with batching.
+[04:56:42 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[04:56:42 - ModelLoad] Building model with cudnn optimization: False
+[04:56:43 - DLoader] Initializing data loader
+[04:56:43 - PWorker] Running inference for 2.9M draft bases.
+[04:56:43 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[04:56:43 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[04:56:43 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901642.
+[04:56:45 - Feature] Processed contig_1:1998000.0-2901641.0 (median depth 87.0)
+[04:56:45 - Sampler] Took 2.15s to make features.
+[04:56:46 - Feature] Processed contig_1:0.0-999999.2 (median depth 81.0)
+[04:56:46 - Sampler] Took 2.46s to make features.
+[04:56:46 - Feature] Processed contig_1:999000.0-1998999.1 (median depth 83.0)
+[04:56:46 - Sampler] Took 2.81s to make features.
+[04:56:54 - PWorker] 16.3% Done (0.5/2.9 Mbases) in 10.7s
+[04:56:54 - PWorker] Samples in cache: 300.
+[04:57:03 - PWorker] Samples in cache: 300.
+[04:57:12 - PWorker] 49.7% Done (1.4/2.9 Mbases) in 28.9s
+[04:57:12 - PWorker] Samples in cache: 201.
+[04:57:21 - PWorker] Samples in cache: 101.
+[04:57:30 - PWorker] 83.5% Done (2.4/2.9 Mbases) in 46.6s
+[04:57:30 - PWorker] Samples in cache: 1.
+[04:57:39 - PWorker] Samples in cache: 0.
+[04:57:40 - PWorker] 100.0% Done (2.9/2.9 Mbases) in 57.2s
+[04:57:40 - PWorker] All done, 0 remainder regions.
+[04:57:40 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[04:57:43 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[04:57:43 - Stitch] Stitching regions: ['contig_1:0-']
+[04:57:43 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[04:57:43 - Stitch] Processing contig_1:0-.
+[04:57:47 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_10/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//LFZip_maxerror_10.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_10/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//LFZip_maxerror_10/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 625.61
+	System time (seconds): 90.50
+	Percent of CPU this job got: 732%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:37.78
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9945448
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 2
+	Minor (reclaiming a frame) page faults: 23089760
+	Voluntary context switches: 3810264
+	Involuntary context switches: 1016579
+	Swaps: 0
+	File system inputs: 128
+	File system outputs: 806952
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+[2020-10-01 04:57:47] INFO: Starting Flye 2.7.1-b1590
+[2020-10-01 04:57:47] INFO: >>>STAGE: configure
+[2020-10-01 04:57:47] INFO: Configuring run
+[2020-10-01 04:57:48] INFO: Total read length: 241786628
+[2020-10-01 04:57:48] INFO: Input genome size: 2900000
+[2020-10-01 04:57:48] INFO: Estimated coverage: 83
+[2020-10-01 04:57:48] INFO: Reads N50/N90: 24685 / 12083
+[2020-10-01 04:57:48] INFO: Minimum overlap set to 5000
+[2020-10-01 04:57:48] INFO: Selected k-mer size: 15
+[2020-10-01 04:57:48] INFO: >>>STAGE: assembly
+[2020-10-01 04:57:48] INFO: Assembling disjointigs
+[2020-10-01 04:57:48] INFO: Reading sequences
+[2020-10-01 04:57:49] INFO: Generating solid k-mer index
+[2020-10-01 04:58:07] INFO: Counting k-mers (1/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:58:12] INFO: Counting k-mers (2/2):
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:58:24] INFO: Filling index table
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 04:59:22] INFO: Extending reads
+[2020-10-01 05:03:52] INFO: Overlap-based coverage: 77
+[2020-10-01 05:03:52] INFO: Median overlap divergence: 0.104262
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 05:04:40] INFO: Assembled 1 disjointigs
+[2020-10-01 05:04:41] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 05:05:30] INFO: >>>STAGE: consensus
+[2020-10-01 05:05:30] INFO: Running Minimap2
+[2020-10-01 05:05:48] INFO: Computing consensus
+[2020-10-01 05:08:14] INFO: Alignment error rate: 0.112163
+[2020-10-01 05:08:14] INFO: >>>STAGE: repeat
+[2020-10-01 05:08:14] INFO: Building and resolving repeat graph
+[2020-10-01 05:08:14] INFO: Parsing disjointigs
+[2020-10-01 05:08:14] INFO: Building repeat graph
+100100% % 0l
+[2020-10-01 05:08:38] INFO: Median overlap divergence: 0.0282258
+[2020-10-01 05:08:38] INFO: Parsing reads
+[2020-10-01 05:08:39] INFO: Aligning reads to the graph
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 05:09:21] INFO: Aligned read sequence: 239329236 / 241786628 (0.989837)
+[2020-10-01 05:09:21] INFO: Median overlap divergence: 0.0286016
+[2020-10-01 05:09:21] INFO: Mean edge coverage: 84
+[2020-10-01 05:09:21] INFO: Simplifying the graph
+[2020-10-01 05:09:21] INFO: >>>STAGE: contigger
+[2020-10-01 05:09:21] INFO: Generating contigs
+[2020-10-01 05:09:21] INFO: Reading sequences
+[2020-10-01 05:09:22] INFO: Generated 1 contigs
+[2020-10-01 05:09:22] INFO: Added 0 scaffold connections
+[2020-10-01 05:09:22] INFO: >>>STAGE: polishing
+[2020-10-01 05:09:22] INFO: Polishing genome (1/1)
+[2020-10-01 05:09:22] INFO: Running minimap2
+[2020-10-01 05:09:38] INFO: Separating alignment into bubbles
+[2020-10-01 05:12:59] INFO: Alignment error rate: 0.066253
+[2020-10-01 05:12:59] INFO: Correcting bubbles
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2020-10-01 05:13:23] INFO: >>>STAGE: finalize
+[2020-10-01 05:13:23] INFO: Assembly statistics:
+
+	Total length:	2901446
+	Fragments:	1
+	Fragments N50:	2901446
+	Largest frg:	2901446
+	Scaffolds:	0
+	Mean coverage:	81
+
+[2020-10-01 05:13:23] INFO: Final assembly: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/flye/assembly.fasta
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Flye-2.7.1/bin/flye --nano-raw /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_10.fastq --genome-size 2.9m --out-dir /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_10/flye/ --threads 8"
+	User time (seconds): 2679.23
+	System time (seconds): 77.09
+	Percent of CPU this job got: 294%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:36.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4045124
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 40348824
+	Voluntary context switches: 409540
+	Involuntary context switches: 6655
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 895944
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+
+[93m[1m[4mLoading reference[0m (2020-10-01 05:13:23)
+    This reference sequence will be used as a template for the Rebaler
+assembly.
+
+[1m[4mReference contig   Circular      Length[0m
+contig_1           no         2,901,446
+
+
+[93m[1m[4mBuilding unpolished assembly[0m (2020-10-01 05:13:23)
+    Rebaler first aligns long reads to the reference using minimap2. It then
+selects high quality alignments and replaces the reference sequence with the
+corresponding read sequence. This creates an unpolished assembly made directly
+from read fragments, similar to what would be produced by miniasm.
+
+Loading reads...                             11,047 reads
+Aligning reads to reference with minimap2... 11,668 initial alignments
+                                             83.91x depth
+Culling alignments to a non-redundant set... 76 alignments remain
+
+Constructing unpolished assembly:
+
+contig_1:
+[32m1ce48bc2(+):0-1652[0m → [32m7865f07d(+):0-35729[0m → [32m7893d366(-):0-37674[0m → [32mecf56bfb(-):0-40932[0m → [32mf94b1d29(-):27799-34890[0m → [32m1cce031c(-):6826-44769[0m → [32mc1832296(+):21833-66834[0m → [32mce019d9c(-):0-32118[0m → [32m74ffae5a(+):4822-77117[0m → [32me252c066(+):0-39719[0m → [32m6e3ac5d4(+):0-64222[0m → [32m2c23d452(-):1250-58881[0m → [32m80838b7f(-):0-30056[0m → [32m1e56c218(-):0-51128[0m → [32m8dd84670(+):0-32974[0m → [32mc0d8ad0b(-):15793-45864[0m → [32m13756882(+):12016-46595[0m → [32m088092c8(-):0-38709[0m → [32m7e998c50(+):0-25848[0m → [32m912f8103(-):0-47965[0m → [32m832b3123(-):5848-36229[0m → [32m64345a0f(+):22640-65706[0m → [32mf51a85b0(-):25933-32426[0m → [32m0d835050(-):0-68479[0m → [32m5393895e(-):1563-37274[0m → [32ma0a7d0d2(-):0-69379[0m → [32m7c848176(-):20174-44916[0m → [32m8866033f(-):0-46945[0m → [32m200ebd4f(-):6697-52453[0m → [32m565d8b5d(-):14270-37978[0m → [32mb3a5c2e3(+):0-56832[0m → [32m07c3693f(-):7860-45742[0m → [32m6b0342d4(+):0-50201[0m → [32mc4d31b74(+):15005-39538[0m → [32mc14b31bd(+):8689-37034[0m → [32m762474ac(+):0-47371[0m → [32m636f180a(-):27827-52307[0m → [32m4f67320c(+):0-46330[0m → [32m650c61fa(+):13417-13488[0m → [32mbbb16619(+):0-60309[0m → [32m8f7fc283(-):0-40872[0m → [32m25dbeb72(+):21839-64692[0m → [32m4c685d71(+):0-40433[0m → [32me9706fca(+):20040-46003[0m → [32m23eb4886(-):0-48214[0m → [32mc607abcd(-):41883-72908[0m → [32mb5aedcd1(-):0-27707[0m → [32m53af0c24(-):0-29319[0m → [32m1914c8bf(+):1394-26904[0m → [32m5c8edf6a(+):17888-52696[0m → [32m1459b8ed(+):0-50222[0m → [32m4b38b487(+):14166-67655[0m → [32mfee50e7d(+):18485-57113[0m → [32m5cae6105(-):16338-64488[0m → [32me99b1c45(+):0-76617[0m → [32m11d6988b(+):10341-18014[0m → [32m8b530503(-):0-48279[0m → [32m6a588308(+):1176-8412[0m → [32mec8f4df5(-):0-45840[0m → [32maa0c3a0b(-):0-28699[0m → [32m691fdefa(+):7114-55856[0m → [32md73be677(-):0-47087[0m → [32m46a00371(-):34448-63407[0m → [32mfe34de4a(-):0-23470[0m → [32me5f0f7ad(+):20223-52242[0m → [32m36fe8e53(+):1687-48530[0m → [32mb103e476(+):0-45183[0m → [32me0532422(-):18432-24979[0m → [32m741b1aca(-):0-32582[0m → [32m3c5ba9e6(-):21773-43672[0m → [32m361e58ed(-):0-79432[0m → [32m99f279ad(-):3271-37196[0m → [32m4354233f(-):0-44578[0m → [32m8bc1b0ba(-):5838-25447[0m → [32m9e59ea69(-):0-54514[0m → [32me123e204(+):6539-42212[0m
+
+
+[93m[1m[4mPolishing assembly[0m (2020-10-01 05:14:53)
+    Rebaler now runs multiple rounds of Racon to polish the assembly. Circular
+unitigs are rotated between rounds. Assembly quality is measured by the sum of
+all read alignment scores.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,886,950      352,259,900
+1           2,901,543      392,894,674
+2           2,901,688      393,017,985
+3           2,901,680      393,014,686
+4           2,901,680      393,027,822
+5           2,901,690      393,025,803
+6           2,901,675      393,023,008
+7           2,901,685      393,023,553
+8           2,901,732      393,024,686
+9           2,901,708      393,033,603
+
+
+
+[93m[1m[4mFinal shred and polish[0m (2020-10-01 05:31:10)
+    To get the best possible consensus, Rebaler now shreds the previous
+polished assemblies to make "reads" for a final couple rounds of polishing.
+
+[1mPolish       Assembly          Mapping[0m
+[1m[4mround            size          quality[0m
+begin       2,901,669      139,798,408
+1           2,901,673      139,823,260
+
+Final assembly size: 2,901,674 bp
+
+	Command being timed: "/raid/shubham/nanopore_lossy_compression/revision_develop_branch/Rebaler-0.2.0/rebaler-runner.py --threads 8 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_10/flye/assembly.fasta /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_10.fastq"
+	User time (seconds): 7419.68
+	System time (seconds): 74.11
+	Percent of CPU this job got: 630%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 19:49.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1190684
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 49456150
+	Voluntary context switches: 503280
+	Involuntary context switches: 19709
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 554672
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Checking program versions
+This is medaka 1.0.3
+Program    Version    Required   Pass     
+bcftools   1.10       1.9        True     
+bgzip      1.10       1.9        True     
+minimap2   2.17       2.11       True     
+samtools   1.10       1.9        True     
+tabix      1.10       1.9        True     
+Aligning basecalls to draft
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/rebaler.fasta.mmi
+Removing previous index file /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/rebaler.fasta.fai
+Constructing minimap index.
+[M::mm_idx_gen::0.111*1.02] collected minimizers
+[M::mm_idx_gen::0.140*1.41] sorted minimizers
+[M::main::0.182*1.32] loaded/built the index for 1 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.191*1.30] distinct minimizers: 516366 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -I 16G -x map-ont --MD -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/rebaler.fasta
+[M::main] Real time: 0.196 sec; CPU: 0.254 sec; Peak RSS: 0.032 GB
+[M::main::0.052*1.03] loaded/built the index for 1 target sequence(s)
+[M::mm_mapopt_update::0.063*1.03] mid_occ = 13
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1
+[M::mm_idx_stat::0.070*1.02] distinct minimizers: 516366 (96.89% are singletons); average occurrences: 1.052; average spacing: 5.342
+[M::worker_pipeline::16.062*5.79] mapped 11047 sequences
+[M::main] Version: 2.17-r941
+[M::main] CMD: minimap2 -x map-ont --MD -t 8 -a -A 2 -B 4 -O 4,24 -E 2,1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/assembly_test_time/SZ_maxerror_10/rebaler.fasta.mmi /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02/experiments/guppy_hac/basecalled_fastq/SZ_maxerror_10.fastq
+[M::main] Real time: 16.082 sec; CPU: 93.027 sec; Peak RSS: 1.368 GB
+[bam_sort_core] merging from 0 files and 8 in-memory blocks...
+Running medaka consensus
+[05:33:46 - Predict] Processing region(s): contig_1:0-2901674
+[05:33:46 - Predict] Setting tensorflow threads to 8.
+[05:33:46 - Predict] Processing 3 long region(s) with batching.
+[05:33:46 - Predict] Using model: /raid/shubham/nanopore_lossy_compression/revision_develop_branch/medaka/venv/lib/python3.6/site-packages/medaka-1.0.3-py3.6-linux-x86_64.egg/medaka/data/r941_min_high_g360_model.hdf5.
+[05:33:46 - ModelLoad] Building model with cudnn optimization: False
+[05:33:47 - DLoader] Initializing data loader
+[05:33:47 - Sampler] Initializing sampler for consensus of region contig_1:0-1000000.
+[05:33:47 - PWorker] Running inference for 2.9M draft bases.
+[05:33:47 - Sampler] Initializing sampler for consensus of region contig_1:999000-1999000.
+[05:33:47 - Sampler] Initializing sampler for consensus of region contig_1:1998000-2901674.
+[05:33:50 - Feature] Processed contig_1:0.0-999999.0 (median depth 77.0)
+[05:33:50 - Sampler] Took 2.34s to make features.
+[05:33:50 - Feature] Processed contig_1:1998000.0-2901673.0 (median depth 90.0)
+[05:33:50 - Sampler] Took 2.43s to make features.
+[05:33:50 - Feature] Processed contig_1:999000.0-1998999.0 (median depth 84.0)
+[05:33:50 - Sampler] Took 2.57s to make features.
+[05:33:59 - PWorker] 17.1% Done (0.5/2.9 Mbases) in 11.4s
+[05:33:59 - PWorker] Samples in cache: 300.
+[05:34:08 - PWorker] Samples in cache: 300.
+[05:34:17 - PWorker] 50.4% Done (1.5/2.9 Mbases) in 29.6s
+[05:34:17 - PWorker] Samples in cache: 202.
+[05:34:25 - PWorker] Samples in cache: 102.
+[05:34:34 - PWorker] 83.4% Done (2.4/2.9 Mbases) in 46.8s
+[05:34:34 - PWorker] Samples in cache: 2.
+[05:34:43 - PWorker] Samples in cache: 0.
+[05:34:44 - PWorker] 100.0% Done (2.9/2.9 Mbases) in 57.0s
+[05:34:44 - PWorker] All done, 0 remainder regions.
+[05:34:44 - Predict] Finished processing all regions.
+Using medaka stitch to create consensus.
+[05:34:47 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[05:34:47 - Stitch] Stitching regions: ['contig_1:0-']
+[05:34:47 - DataIndex] Loaded 1/1 (100.00%) sample files.
+[05:34:47 - Stitch] Processing contig_1:0-.
+[05:34:51 - Stitch] Used heuristic 0 times for contig_1:0-.
+Polished assembly written to /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_10/medaka/consensus.fasta, have a nice day.
+	Command being timed: "medaka_consensus -i /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/basecalled_fastq//SZ_maxerror_10.fastq -d /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_10/rebaler.fasta -o /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac/assembly_test_time//SZ_maxerror_10/medaka -t 8 -m r941_min_high_g360"
+	User time (seconds): 625.65
+	System time (seconds): 88.77
+	Percent of CPU this job got: 724%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:38.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 9112940
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 23269537
+	Voluntary context switches: 3744477
+	Involuntary context switches: 1080748
+	Swaps: 0
+	File system inputs: 16
+	File system outputs: 809448
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

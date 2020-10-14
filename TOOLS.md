@@ -1,12 +1,10 @@
 ## Installing tools
 
-Below are the steps for installing all the tools and data required for reproducing the results in the study. We will assume everything is installed in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`. All experiments were performed on an Ubuntu 18.04.4 server with 40 Intel Xeon processors (2.2 GHz), 260 GB RAM and 8 Nvidia TITAN X (Pascal) GPUs. The default Python version was 3.7.6 (Anaconda).
+Below are the steps for installing all the tools required for reproducing the results in the study. We will assume everything is installed in a working directory `$WORKINGDIR` and this variable is set using `export WORKINGDIR=/MY/PATH`. All experiments were performed on an Ubuntu 18.04.4 server with 40 Intel Xeon processors (2.2 GHz), 260 GB RAM and 8 Nvidia TITAN X (Pascal) GPUs. The default Python version was 3.7.6 (Anaconda).
 
 ```
 cd $WORKINGDIR
 ```
-
-### Installing tools
 
 #### Clone this git repository
 ```
@@ -23,7 +21,7 @@ pip install -q --upgrade pip
 ### Utility libraries
 
 #### ont_fast5_api
-Utility functions for conversion from multi to single read fast5
+Utility functions for conversion from multi to single read fast5.
 ```
 pip install ont_fast5_api
 ```
@@ -45,7 +43,7 @@ rm v1.3.tar.gz
 ```
 
 #### Minimap2
-Aligner used by various tools in the pipeline/
+Aligner used by various tools in the pipeline.
 ```
 wget https://github.com/lh3/minimap2/archive/v2.17.tar.gz
 cd minimap2-2.17
@@ -75,6 +73,18 @@ git clone https://github.com/jts/assembly_accuracy
 cd assembly_accuracy/
 git checkout ff822506aa12958a203c093257cdbfcf7abd6308
 cd ../
+```
+
+#### BCFtools
+Used for generating fasta for NA12878 from reference fasta and GIAB VCF file.
+```
+wget https://github.com/samtools/bcftools/releases/download/1.11/bcftools-1.11.tar.bz2
+tar -xjvf bcftools-1.11.tar.bz2
+cd bcftools-1.11/
+./configure
+make
+cd ../
+rm bcftools-1.11.tar.bz2
 ```
 
 ### Compressors

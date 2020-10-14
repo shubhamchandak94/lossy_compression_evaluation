@@ -1,0 +1,315 @@
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//fast5/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//fast5/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 5013 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 879578 ms, Samples called: 2426364274, samples/s: 2.75856e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//fast5 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//lossless.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3514.94
+	System time (seconds): 335.41
+	Percent of CPU this job got: 415%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:26.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6204032
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 14067607
+	Voluntary context switches: 12231121
+	Involuntary context switches: 26123
+	Swaps: 0
+	File system inputs: 6275648
+	File system outputs: 1929816
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_1/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_1/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 8187 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 882640 ms, Samples called: 2426364789, samples/s: 2.74899e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//LFZip_maxerror_1.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3697.14
+	System time (seconds): 344.05
+	Percent of CPU this job got: 417%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:08.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7423296
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 19299782
+	Voluntary context switches: 11956267
+	Involuntary context switches: 92147
+	Swaps: 0
+	File system inputs: 7714824
+	File system outputs: 1930280
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_1/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_1/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 7150 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 885372 ms, Samples called: 2426364329, samples/s: 2.7405e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_1 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//SZ_maxerror_1.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3717.31
+	System time (seconds): 340.40
+	Percent of CPU this job got: 426%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:52.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6668196
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 16745982
+	Voluntary context switches: 11882425
+	Involuntary context switches: 116439
+	Swaps: 0
+	File system inputs: 8359496
+	File system outputs: 1930248
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_5/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_5/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 7109 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 883664 ms, Samples called: 2426373559, samples/s: 2.74581e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_5 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//LFZip_maxerror_5.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3700.94
+	System time (seconds): 338.20
+	Percent of CPU this job got: 401%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:44.99
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6680160
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 18663100
+	Voluntary context switches: 11741781
+	Involuntary context switches: 335450
+	Swaps: 0
+	File system inputs: 6411488
+	File system outputs: 1928672
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_5/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_5/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 8850 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 881920 ms, Samples called: 2426370614, samples/s: 2.75124e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_5 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//SZ_maxerror_5.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3697.29
+	System time (seconds): 338.96
+	Percent of CPU this job got: 404%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:37.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6784220
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 22910937
+	Voluntary context switches: 12004318
+	Involuntary context switches: 195084
+	Swaps: 0
+	File system inputs: 7137056
+	File system outputs: 1928616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_10/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_10/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 6458 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 881601 ms, Samples called: 2426378519, samples/s: 2.75224e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/LFZip_maxerror_10 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//LFZip_maxerror_10.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3674.58
+	System time (seconds): 338.23
+	Percent of CPU this job got: 406%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:28.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7139260
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 18436863
+	Voluntary context switches: 11924802
+	Involuntary context switches: 77642
+	Swaps: 0
+	File system inputs: 5859688
+	File system outputs: 1924496
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+ONT Guppy basecalling software version 3.6.1+249406c, client-server API version 1.1.0
+config file:        /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/dna_r9.4.1_450bps_hac.cfg
+model file:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/ont-guppy/data/template_r9.4.1_450bps_hac.jsn
+input path:         /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_10/
+save path:          /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_10/guppy_tmp_out
+chunk size:         2000
+chunks per runner:  512
+records per file:   4000
+num basecallers:    4
+gpu device:         cuda:2
+kernel path:        
+runners per device: 4
+
+Found 11047 fast5 files to process.
+Init time: 8487 ms
+
+0%   10   20   30   40   50   60   70   80   90   100%
+|----|----|----|----|----|----|----|----|----|----|
+***************************************************
+Caller time: 882230 ms, Samples called: 2426381419, samples/s: 2.75028e+06
+Finishing up any open output files.
+Basecalling completed successfully.
+	Command being timed: "./basecall_guppy.sh /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/new_fast5/SZ_maxerror_10 /raid/shubham/nanopore_lossy_compression/revision_develop_branch/data/Staphylococcus_aureus_CAS38_02//experiments/guppy_hac//basecalled_fastq_test_time//SZ_maxerror_10.fastq dna_r9.4.1_450bps_hac.cfg"
+	User time (seconds): 3716.93
+	System time (seconds): 337.27
+	Percent of CPU this job got: 414%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:18.88
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6971852
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 17009693
+	Voluntary context switches: 11703667
+	Involuntary context switches: 240269
+	Swaps: 0
+	File system inputs: 5943968
+	File system outputs: 1924352
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
