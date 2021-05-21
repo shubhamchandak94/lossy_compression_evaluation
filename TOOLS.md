@@ -46,6 +46,7 @@ rm v1.3.tar.gz
 Aligner used by various tools in the pipeline.
 ```
 wget https://github.com/lh3/minimap2/archive/v2.17.tar.gz
+tar -xzvf v2.17.tar.gz
 cd minimap2-2.17
 make
 cd ../
